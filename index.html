@@ -61,7 +61,7 @@
 
           <a href="index.html" style="text-decoration: none;"><span class="logo">
            (Matheus Araujo)
-           <!-- <img src="img/logo-maker2.png" width="240px">🐒  -->
+          
           </span></a>
 
           <input type="checkbox" id="hamburguer" style="display: none;">
@@ -123,6 +123,12 @@
                     <div class="git">
                       <a href="https://github.com/Math-cod3"> <i class="fab fa-github"></i><span class="git"></span></a></div>
               </div>
+                <p>
+                  <i class="fas fa-share-alt"></i>
+                  <a href="javascript:void(0)" onclick="share()">
+                    <i src="https://math-cod3.github.io/portifolio.matheusaraujo.io/index.html" class="fas fa-share-alt"></i>
+                  </a>
+                </p>
                 
                  
               </div>
@@ -482,6 +488,19 @@
       digitar(text);
       digitar(p);
        
+      </script>    
+    <script>
+      function share(){
+            if (navigator.share !== undefined) {
+              navigator.share({
+                title: 'O título da sua página',
+                text: 'Um texto de resumo',
+                url: 'https://seusite.com/sua_url',
+              })
+              .then(() => console.log('Successful share'))
+              .catch((error) => console.log('Error sharing', error));
+            }
+          }
     </script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script type="text/javascript" src="js/scroll.js"></script>
