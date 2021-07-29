@@ -1,0 +1,509 @@
+<?php
+  include 'php/envia.php';
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!--  META TAGS SEO -->
+    <meta name="description" content="Me chamo Matheus Araujo, sou estudante de Tecnologia e Análise de Sistemas, Desenvolvedor Front-End, Designer Gráfico e apaixonado por programação e tecnologia.">
+    <link rel="canonical" href="http://matheusaraujoportifolium.epizy.com/index.html">
+    <meta name="author" content="Matheus de Araujo">
+    <meta name="robots" content="index">
+
+    <!-- Google+ / Schema.org -->
+    <meta itemprop="name" content="🌈&Rcy;ortifólio &#x000B7; Matheus Araujo&NewLine; Front-end Developer">
+    <meta itemprop="description" content="Me chamo Matheus Araujo, sou estudante de Tecnologia e Análise de Sistemas, Desenvolvedor Front-End, Designer Gráfico e apaixonado por programação e tecnologia.">
+    <meta itemprop="image" content="img/link_img.png">
+    <link href="http://plus.google.com/+SuaPagina" rel="publisher">
+
+    <!-- OPen Graph Facebook -->
+    <meta property="og:title" content="🌈&Rcy;ortifólio &#x000B7; Matheus Araujo&NewLine; Front-end Developer">
+    <meta property="og:description" content="Me chamo Matheus Araujo, sou estudante de Tecnologia e Análise de Sistemas, Desenvolvedor Front-End, Designer Gráfico e apaixonado por programação e tecnologia.">
+    <meta  property="og:url" content="http://matheusaraujoportifolium.epizy.com/index.html">
+    <meta property="og:site_name" content="🌈&Rcy;ortifólio &#x000B7; Matheus Araujo&NewLine; Front-end Developer">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/link_img.png">
+
+    <!-- twitter -->
+    <meta name="twitter:title" content="🌈&Rcy;ortifólio &#x000B7; Matheus Araujo&NewLine; Front-end Developer">
+    <meta name="twitter:description" content="Me chamo Matheus Araujo, sou estudante de Tecnologia e Análise de Sistemas, Desenvolvedor Front-End, Designer Gráfico e apaixonado por programação e tecnologia.">
+    <meta name="twitter:url" content="http://matheusaraujoportifolium.epizy.com/index.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="img/link_img.png">
+    <meta name="twitter:creator" content="@matheusaraujo">
+
+
+
+    <!-- CSS PURO -->
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/cookies.css">
+    
+    <link rel="icon" href="img/logo-icon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <script src="https://kit.fontawesome.com/e07450b1d6.js" crossorigin="anonymous"></script>
+
+    <title>&Rcy;ortifólio &#x000B7; Matheus Araujo&NewLine; &#x000B7; Página Inicial</title>
+  </head>
+ <!--  <body style="background: linear-gradient(40deg, #8e2de2, #4a00e0); background-attachment: fixed; background-size: cover; "> -->
+    <body style="background-image: url(img/valley2.svg); background-attachment: fixed; background-size: cover;">
+    <header id="top">
+     
+        <div class=" header">
+          
+
+          <a href="index.html" style="text-decoration: none;"><span class="logo">
+           (Matheus Araujo)
+           <!-- <img src="img/logo-maker2.png" width="240px">🐒  -->
+          </span></a>
+
+          <input type="checkbox" id="hamburguer" style="display: none;">
+          <label for="hamburguer">
+            <div class="hamburguer" onclick="mudarClasse()">
+              
+            </div>
+          </label>
+
+          <nav id="nav-menu">
+            <ul>
+              <li><a href="#home" class="link">Sobre mim</a></li>
+              <li><a href="#skills" class="link">Skills</a></li>
+              <li><a href="#port" class="link">Projetos</a></li>
+              <li><a href="#art" class="link">ArtWork</a></li>
+              <li><a href="#contato" class="link">Contato</a></li>
+              
+              <li><a href="mailto:matheus.souza74work@gmail.com" data-bs-toggle="popover" title="E-mail" data-bs-content="Página de contato"><i id="carta" class="far fa-envelope" style="font-size: 24px; filter: invert(0);"></i></a></li>
+      
+            </ul>
+          </nav>
+    
+          
+        </div>
+        
+    </header>
+    <div id="scroll-progress"></div>
+
+    <!-- <div id="loader"></div> -->
+    
+
+    <main style="margin-top: 6rem;">
+
+      <!-- SEÇÃO INICIAL -->
+      <section id="home">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 d-flex caixa" data-anime="left">
+              <div class="align-self-center" >
+                <h1 class="display-5 fw-bold" id="h1" style="color: #A3AEB7; font-weight: bold; font-size: 36px;">
+                  Bem-vindo! 😄
+                </h1>
+                <h1 class="display-5 fw-bold" id="h1" style="color: #22292F; font-weight: bolder; font-size: 50px;">
+                  Me chamo Matheus
+                </h1>
+                <p class="lead" style="font-weight: 800;" data-anime="left" id="type">
+                   Sou estudante de Tecnologia e Análise de Sistemas, Desenvolvedor Front-End, Designer Gráfico e apaixonado por programação e tecnologia.
+                </p>
+
+                  <div class="social-media">
+                    <div class="face">
+                      <a href="https://www.facebook.com/">
+                       <i class="fab fa-facebook-f"></i><span></span></a>
+                     </div>
+
+                    <div class="linked">
+                      <a href="https://br.linkedin.com/"><i class="fab fa-linkedin-in"></i><span ></span></a></div>
+
+                    <div class="git">
+                      <a href="https://github.com/Math-cod3"> <i class="fab fa-github"></i><span class="git"></span></a></div>
+              </div>
+                
+                 
+              </div>
+            </div>
+            <div class="col-md-6 caixa " style=" padding: 50px; width: 400px; min-width: 200px;" data-anime="right"> <!-- d-none -->
+              <!-- <img src="img/Programming-pana.svg"  alt="Sobre mim" class="img-fluid"  > -->
+              <center>
+                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_bp5lntrf.json"  background="transparent"  speed="1.5"  style="width: 350px; height: 350px;"  loop  autoplay></lottie-player>
+              </center>
+
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO HARD SKILLS -->
+
+       <section id="skills">
+        <div class="container">
+          <div class="row">
+           
+            <div class="col-md-6 d-flex caixa" data-anime="right">
+              <div class="align-self-center">
+                <h2 style="color: #0B142B; font-weight: bold;">Domínio das tecnologias👨‍💻</h2>
+                <p>
+                  É de suma importância para um desenvolvedor dominar as tecnologias mais requisitadas no mercado. Abra os cards abaixo para ver meu nível nas tecnologias citadas passando o mouse ou ao toque na tela. 
+                </p>
+
+
+               
+                 <h4 style="color: #0B142B; font-weight: bold;">Linguagens</h4>
+               
+              
+                <div class="card-">
+                  <div class="img-box js">
+                    <img src="img/js.png" width="64" height="64">
+                    
+                  </div>
+                  <div class="content">
+                    <h4 style="color: #0B142B; font-weight: bold;">Javascript</h4>
+                    <p>
+                      Possuo bons conhecimentos na versão ES6, de modo a lidar bem tanto com paradigma procedural e orientado a objetos.
+                    </p>
+                    
+                  </div>
+                </div>
+                <div class="card-">
+                  <div class="img-box html">
+                    <img src="img/html.png" width="64" height="64">
+                    
+                  </div>
+                  <div class="content">
+                    <h4 style="color: #0B142B; font-weight: bold;">HTML5</h4>
+                    <p>
+                      Conhecimento consolidado com anos de estudo e prática em HTML5.
+                    </p>
+                    
+                  </div>
+                </div>
+                <div class="card-">
+                  <div class="img-box css">
+                    <img src="img/css.png" width="64" height="64">
+                    
+                  </div>
+                  <div class="content">
+                    <h4 style="color: #0B142B; font-weight: bold;">CSS3</h4>
+                    <p>
+                      Conhecimento consolidado em CSS. Não há mistério ao dominar CSS Grid e Flexbox, um design elegante e responsivo é garantido.
+                      
+                    </p>
+                    
+                  </div>
+                </div>
+                <div class="card-">
+                  <div class="img-box php">
+                    <img src="img/php.png" width="64" height="64">
+                    
+                  </div>
+                  <div class="content">
+                    <h4 style="color: #0B142B; font-weight: bold;">PHP</h4>
+                    <p>
+                      O PHP é a linguagem da web, é essencial para o desenvolvedor web conhecer pelo menos um pouco desta tecnologia para lidar com questões que envolvem o Back-end.
+                    </p>
+                    
+                  </div>
+                </div>
+
+              </div> <!-- fim da div align center -->
+              </div>
+               <div class="col-md-6 d-flex caixa" data-anime="right">
+              
+              <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_akvf8jo7.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+              
+            </div>
+            </div> <!-- fim do row -->
+            
+          
+        </div>  <!-- fim da div container -->
+      </section>
+
+      <!-- SEÇÃO PORTIFÓLIO -->
+      <section id="port" style="background: #0D0C22;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 d-flex caixa" >
+              <div class="align-self-center">
+                <h2 data-anime="right" style="color: #0EC0C1; font-weight: bold;">&lt;Projetos/&gt;</h2>
+                <p data-anime="right" style="color: #fff;">
+                  Desenvolver aplicações com o intuito de sempre querer melhorar é o brilho que todo desenvolvedor deveria ter. Clique no botão "projetos" para ver meus trabalhos em uma página separada.
+                </p>
+                <a href="projetos.html">
+                  <button class="btnn2">Projetos<span></span></button>
+                </a>
+
+                 <div class="col-md-12 poster">
+                 <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_xsnsvpbs.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+              </div>
+      
+            
+              </div>
+            </div>
+           
+
+            <div class="col-md-6" data-anime="left">
+    
+             <div class="align-self-center">
+                <div class="row albuns">
+                  <div class="col-md-6 poster">
+                     <img src="img/spotify.png" class="img-fluid">
+                    <a href="spotify/index.html"><span>
+                      <h5>Spotify</h5>
+                  </span></a>
+                  </div>
+                  <div class="col-md-6 poster">
+                    <img src="img/mosquitocapa.png" class="img-fluid">
+                    <a href="mosquito/index.html"><span><h5>Mini Game &#x000B7; Mata Mosquito</h5></span></a>
+                  </div>
+                </div>
+                <div class="row albuns">
+                  <div class="col-md-6 poster">
+                    <img src="img/quadromedalha.png" class="img-fluid">
+                    <a href="olimpic.html"><span><h5>Quadro de medalhas</h5></span></a>
+                  </div>
+                  <div class="col-md-6 poster">
+                    <img src="img/orcamento.png" class="img-fluid">
+                    <a href="app1/index.html"><span><h5>Orçamento</h5></span></a>
+                  </div>
+                </div>
+
+              </div>
+
+
+          </div>
+
+
+          </div>
+
+          
+        </div>
+      </section>
+
+      <!-- SEÇÃO ARTWORK -->
+      <section id="art" style="background: #0D0C22;">
+        <div class="container">
+          <div class="row">
+
+             <div class="col-md-6">
+              <center>
+                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_2nbubmkc.json" mode="bounce" background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+              </center>
+
+              </div>
+
+
+            <div class="col-md-6 d-flex caixa"data-anime="left">
+              <div class="align-self-center">
+                <h2 data-anime="right" style="color: #0EC0C1; font-weight: bold;">Ilustrações🌈</h2>
+                <p data-anime="right" style="color: #fff;">
+                  Conhecer os softwares de Designer Gráfico também faz parte da vida de quem deseja que as pessoas tenham uma experiência visual agradável. Clique no botão "Visualizar" para ver meus trabalhos em uma página separada.
+                </p>
+                <a href="artwork.html">
+                  <button class="btnn2">Visualizar<span></span></button>
+                  <!-- <button class="btn btn-primary">Visualizar</button> -->
+                </a>
+      
+            
+              </div>
+            </div>
+        
+
+
+
+          </div>
+
+
+          
+        </div>
+      </section>
+
+
+     <!-- SEÇÃO SOFT SKILLS -->
+       <section >
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 caixa">
+              <center> <h2 style="color: #0B142B; font-weight: bold; margin: 2em;">Soft Skills🧠</h2>
+                <p style="color: #18191A; font-weight: bolder;">
+                  Também é importante para um profissional desenvolver habilidades interpessoais que vão além da técnica. Aqui estão algumas competências que me destaco.
+                </p></center>
+            </div>
+          </div>
+          <div class="row">
+            
+            <div class="col-md-4 caixa" data-anime="left" style=" border-radius: 10px; overflow: hidden;">
+              <div class="card">
+              
+              <center style="padding: 2rem;"><img src="img/comunicacao.png" class="img-fluid" alt="habilidades de desenvolvimento" width="64" height="64"> </center>
+              
+              <center><h4 style="font-weight: bold; color: #0B142B;">Comunicação</h4></center>
+              <p style="padding: 0.5rem;">
+                &emsp;Manter uma boa e eficaz comunicação com pessoas, seja o cliente ou colega de trabalho é indispensável não só no ambiente profissional, mas também para a vida.
+              </p>
+            </div>
+
+            </div>
+
+
+             <div class="col-md-4 caixa" data-anime="top" style=" border-radius: 10px; overflow: hidden;">
+              <div class="card">
+             <center style="padding: 2rem;"><img src="img/ideia.png" class="img-fluid" width="64" height="64" alt="criativo"> </center>
+              <center><h4 style="font-weight: bold; color: #0B142B;">Criatividade</h4></center>
+              <p style="padding: 0.5rem;">
+                &emsp;O trabalho de um programador não se calca apenas em escrever código, mas principalmente em encontrar soluções inovadoras para a resolução de problemas.
+              </p>
+            </div>
+            </div>
+
+
+             <div class="col-md-4 caixa" data-anime="right" style=" border-radius: 10px; overflow: hidden;">
+              <div class="card">
+               <center style="padding: 2rem;"><img src="img/adaptativo.png" width="64" height="64" class="img-fluid" alt="adaptativo"></center>
+
+              <center><h4 style="font-weight: bold; color: #0B142B;">Adaptatividade</h4></center>
+              <p style="padding: 0.5rem;">
+                &emsp;Para o profissional de TI a adaptatividade talvez seja mais importante do que em qualquer outra área. Com as mudanças diárias no mercado de tecnologia, ele deve estar apto prontamente às mudanças. 
+              </p>
+            </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO DE FORMULÁRIO -->
+      <section  id="contato">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 d-flex caixa" data-anime="left">
+              <div class="align-self-center">
+              <h3 style="color: #0B142B; font-weight: bolder;">"Vamos bater um papo? Envie uma mensagem ou deixe seu e-mail."</h3>
+              <p style="color: #aaa;">
+                Contato: +55 21 97686-9618 <img src="img/whatsapp.png">
+              </p>
+              <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_8eivc9l1.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+              </div>
+              
+            </div>
+            <div class="col-md-6 d-flex caixa"data-anime="right">
+              <div class="align-self-center" >
+
+                
+                <!-- <form method="POST" action="php/email.php" class="formulario">
+
+                  <fieldset>
+                  <legend style="font-weight: bold; color: #0B142B;">Formulário de contato💬</legend>
+                  <input class="field" type="text" name="name" placeholder="Nome" required>
+                  <input class="field" type="email" name="email" placeholder="E-mail" required>
+                  <textarea type="text" class="field" name="message" placeholder="Digite sua mensagem aqui"></textarea>
+
+                  <div class="g-recaptcha" data-sitekey="|*SEU-SITE-KEY*|"></div>
+                  <div style="display: flex; align-items: center; justify-content: space-around; width: 100%;  margin-top: 10px;">
+                    <input class="field2 btn btn-primary" type="submit" name="Enviar" value="Enviar">
+                    <input class="field2 btn btn-danger" type="reset" value="Apagar">
+                  </div>
+                  </fieldset>
+                </form> -->
+
+                <a href="mailto:matheus.souza74work@gmail.com">
+                  <button id="form-btn" class="btnn">Drop e-mail&emsp;&emsp; <span style="font-weight: bold ;font-size: 24px; color: #fff;">&rightarrow;</span></button>
+                  
+                </a>
+
+                <p style="display: block; margin: 10px;">
+                  "Tentarei responder as mensagens assim que possível."
+                </p>
+
+              
+
+                
+              </div>
+            </div>
+
+            
+          </div>
+          
+        </div>
+        
+      </section>
+
+  </main>
+    <footer class="mt-4" style="background: #0D0C22; color: #fff; padding: 1rem;">
+      <div class="container" style="padding: 1rem!important;">
+        <div class="row">
+          <div class="col-md-8">
+            <p>
+              
+              <a href="#"><i style="font-size: 24px; color: #0EC0C1;" class="fas fa-home"></i></a>
+              
+            </p>
+            <div style="color: #fff;">Ícones feitos por <a href="https://www.flaticon.com/br/autores/fjstudio" title="fjstudio">fjstudio</a> e <a href="https://www.flaticon.com/br/autores/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
+           <p style="color: #fff;"> the icon "background" is provided by <a href="https://loading.io/">loading.io</a></p>
+
+            
+          </div>
+          <div class="col-md-4">
+            <p style="color: #fff; font-style: italic;">
+              "Desenvolvido por Matheus Araujo de Souza&reg;"
+            </p>
+           
+          </div>
+        </div>
+      </div>
+
+    </footer>
+    <div class="cookies-container">
+    <div class="cookies-content">
+      <p>Permito o uso de cookies para:</p>
+      <div class="cookies-pref">
+        <label><input type="checkbox" checked data-function="analytics">Análise de Uso</label>
+        <label><input type="checkbox" checked data-function="marketing">Marketing</label>
+      </div>
+      <button class="cookies-save">Salvar e Continuar</button>
+    </div>
+  </div>
+  <script type="text/javascript" src="cookies/cookies.js"></script>
+
+    <script>
+      let btn = document.getElementById('nav-menu')
+
+      function mudarClasse(){
+        if (btn.classList == 'ativo') {
+
+          btn.classList.remove('ativo')
+        }
+        else{
+          btn.classList.add('ativo')
+        }
+      }
+
+    </script>
+
+    <script src="js/scroll-progress.js"></script>
+    <script>
+     const text = document.querySelector('#h1');
+     const p = document.querySelector('p');
+      function digitar(elemento) {
+    const textoArray = elemento.innerHTML.split('');
+    elemento.innerHTML = '';
+    textoArray.forEach((letra, i) => {
+      setTimeout(() => elemento.innerHTML += letra, 50 * i);
+    });
+  }   
+      digitar(text);
+      digitar(p);
+       
+    </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,395 @@
+/*html, body, header, main, footer, article, div, span, p, a, figure, img, small{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: sans-serif;
+	outline: none;
+}
+
+.container{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.linha{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+}
+
+.coluna{}
+
+body{
+
+}
+
+body > header{
+	background-image: url();
+	background-repeat: no-repeat;
+	background-position: center -115px;
+	padding: 18px 0;
+}
+
+body > header .container{}
+body > header .linha{}
+body > header .linha .coluna{}
+body > header .linha .coluna figure{}
+body > header .linha .coluna figure img{
+
+	width: 100%;
+	max-width: 150px;
+}
+
+body > header .linha .coluna h1{
+	color: #fff;
+	margin-left: 30px;
+}
+
+
+
+main{
+	background-color: #f7f7f7;
+	height: 100vh;
+	padding-top: 80px;
+}
+main .container{}
+main article{
+	 box-shadow: 0 0 14px -9px #000;
+}
+main article .linha .coluna{
+	padding: 15px 0;
+}
+main article header{
+	padding: 0 15px;
+}
+main article header .linha{}
+main article header .linha .coluna{}
+main article header .linha .coluna span{
+	font-size: 26px;
+	font-weight: bold;
+}
+main article header .linha .coluna-rank{}
+main article header .linha .coluna-rank span{}
+main article header .linha .coluna-country{
+	flex-grow: 2;
+}
+main article header .linha .coluna-country span{}
+main article header .linha .coluna-medalha{}
+main article header .linha .coluna-medalha span{
+	width: 54px;
+    height: 54px;
+    display: inline-block;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 100%;
+    border: 2px solid #fff;
+}
+main article header .linha .coluna-medalha:nth-child(3) span{
+    background-color: #f7cc48;
+}
+main article header .linha .coluna-medalha:nth-child(4) span{
+    background-color: #d8d6d6;
+}
+main article header .linha .coluna-medalha:nth-child(5) span{
+    background-color: #b7955e;
+}
+main article header .linha .coluna-total{}
+main article header .linha .coluna-total span{}
+main article section{
+	height: 608px;
+	overflow-y: scroll;
+}
+main article section .linha{
+	padding: 15px 0;
+}
+main article section .linha:nth-child(2n+1){
+    background-color: #e6e6e6;
+}
+main article section .linha .coluna{}
+main article section .linha .coluna span{
+	font-size: 22px;
+}
+main article section .linha .coluna-rank{
+	flex-basis:  95px;
+}
+main article section .linha .coluna-rank span{}
+main article section .linha .country{
+	flex-grow: 2;
+}
+main article section .linha .country img{}
+main article section .linha .country span{
+	vertical-align: top;
+}
+.medal_gold, .medal_silver, .medal_bronze{
+    flex-basis: 84px;
+}
+main article section .linha .medal_gold{}
+main article section .linha .medal_gold span{}
+main article section .linha .medal_silver{}
+main article section .linha .medal_silver span{}
+main article section .linha .medal_bronze{}
+main article section .linha .medal_bronze span{}
+main article section .linha .total{
+	 flex-basis: 76px;
+}
+main article section .linha .total span{}
+*/
+
+
+
+
+html, body, header, main, footer, article, div, span, p, a, figure, img, small{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    outline: none;
+}
+::-webkit-scrollbar{
+            background-color: #d1d1d1;
+            width: 9px;
+            height: 9px;
+            
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #5b5b5b;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            background-color: #333;
+        }
+.back{
+        position: fixed;
+        z-index: 999;
+        top: 10%;
+        left: 3%;
+        filter: invert(1);
+
+    }
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.linha{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.coluna{}
+
+
+/* BODY */
+body{
+    
+}
+
+
+/* HEADER */
+body > header{
+    /*background-image: url("img/bk-header.jpg");*/
+    background-repeat: no-repeat;
+    background-position: center -115px;
+    padding: 18px 0;
+}
+body > header .container{}
+body > header .linha{}
+body > header .linha .coluna{}
+body > header .linha .coluna figure{}
+body > header .linha .coluna figure img{
+    width: 100%;
+    max-width: 150px;
+}
+body > header .linha .coluna h1{
+    color: #fff;
+    margin-left: 30px;
+}
+
+#rings{
+    
+    margin: 0 auto;
+  
+    position: fixed;
+    height: 100%;
+    opacity: 0;
+    z-index: -99;
+    
+    width: 100%;
+    animation-name: fadeout;
+    animation-duration: 5.3s;
+
+}
+#rings img{
+    left: 45%;
+    
+}
+
+
+/* MAIN */
+main{
+    background-color: #f7f7f7;
+    height: 100vh;
+    padding-top: 80px;
+    animation-name: fadein;
+    animation-duration: 5s;
+}
+main .container{}
+main article{
+    box-shadow: 0 0 14px -9px #000;
+}
+main article .linha{}
+main article .linha .coluna{
+    padding: 0 15px;
+}
+main article header{
+    padding: 15px 0;
+}
+main article header .linha{}
+main article header .linha .coluna{}
+main article header .linha .coluna span{
+    font-size: 26px;
+    font-weight: bold;
+}
+main article header .linha .coluna-rank{}
+main article header .linha .coluna-rank span{}
+main article header .linha .coluna-country{
+    flex-grow: 2
+}
+main article header .linha .coluna-country span{}
+main article header .linha .coluna-medalha{}
+main article header .linha .coluna-medalha span{
+    width: 54px;
+    height: 54px;
+    display: inline-block;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 100%;
+    border: 2px solid #fff;
+}
+main article header .linha .coluna-medalha:nth-child(3) span{
+    background-color: #f7cc48;
+}
+main article header .linha .coluna-medalha:nth-child(4) span{
+    background-color: #d8d6d6;
+}
+main article header .linha .coluna-medalha:nth-child(5) span{
+    background-color: #b7955e;
+}
+main article header .linha .coluna-total{}
+main article header .linha .coluna-total span{}
+main article section{
+    height: 608px;
+    overflow-y: scroll;
+}
+main article section .linha{
+    padding: 15px 0;
+}
+main article section .linha:nth-child(2n+1){
+    background-color: #e6e6e6;
+}
+main article section .linha .coluna{}
+main article section .linha .coluna span{
+    font-size: 22px;
+}
+main article section .linha .coluna-rank{
+    flex-basis: 95px;
+}
+main article section .linha .coluna-rank span{}
+main article section .linha .country{
+    flex-grow: 2;
+}
+main article section .linha .country img{}
+main article section .linha .country span{
+    vertical-align: top;
+}
+.medal_gold, .medal_silver, .medal_bronze{
+    flex-basis: 84px;
+}
+main article section .linha .medal_gold{}
+main article section .linha .medal_gold span{}
+main article section .linha .medal_silver{}
+main article section .linha .medal_silver span{}
+main article section .linha .medal_bronze{}
+main article section .linha .medal_bronze span{}
+main article section .linha .total{
+    flex-basis: 76px;
+}
+main article section .linha .total span{}
+
+/*animmações*/
+
+@keyframes fadein {
+
+    10%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+
+
+
+}
+@keyframes fadeout {
+
+    10%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@media (max-width: 300px) { 
+    #content {
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    /* final spec */
+    transform: rotate(-90deg);
+    }
