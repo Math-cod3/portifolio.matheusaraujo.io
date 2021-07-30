@@ -7,8 +7,7 @@
 -----------------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
 
 *{
 	margin: 0px;
@@ -23,7 +22,7 @@
 	line-height:34px;
 	
 	list-style: none;
-	color: #A3AEB7;
+	color: #18191A;
 }
 /*cores
 #0EC0C1 azul claro
@@ -112,7 +111,7 @@ header{
 	color: #0B142B;
 	cursor: pointer;
 	position: relative;
-	right: -0px;
+	right: 0px;
 	transition: 0.2s;
 }
 .logo:hover{
@@ -187,6 +186,10 @@ main{
 
 #home{
 	background: transparent;
+	color: #3C434E;
+}
+i{
+	color: #18191A;
 }
 
 section{
