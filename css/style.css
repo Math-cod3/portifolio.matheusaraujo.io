@@ -709,6 +709,14 @@ section{
 
 /*media querys*/
 
+ @media screen and (max-width: 600px){
+    section{
+      margin: 2rem auto;
+      width: calc(100% - 0px);
+      border-radius: 0px;
+    }
+}
+
 @media screen and (max-width: 999px){
 
 
