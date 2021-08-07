@@ -197,7 +197,7 @@ section{
 	width: calc(100% - 1.7rem);
 	align-items: center;
 	background-color: #fff;
-	border-radius: 10px;
+	border-radius: 5px;
 	padding: 2rem;
 	/*box-shadow: 2px 2px 14px #2f2b35;*/
 
@@ -226,10 +226,10 @@ section{
 }
 .caixa{
 			
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			margin: 1rem auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin: 1rem auto;
 		}
 	
 
@@ -263,75 +263,75 @@ section{
 /*botão personalizado*/
 
 .btnn{
-			width: 200px;
-			padding: 0.5rem 0;
-			color: #fff;
-			text-align: center;
-			border-radius: 25px;
-			font-weight: bold;	
-			background-color: #0B142B;
-			cursor: pointer;
-			position: relative;
-			overflow: hidden;
-			z-index: 2;
-			transition: 0.5s;
+	width: 200px;
+	padding: 0.5rem 0;
+	color: #fff;
+	text-align: center;
+	border-radius: 25px;
+	font-weight: bold;	
+	background-color: #0B142B;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+	transition: 0.5s;
 		}
-		.btnn span{
-			transition: 0.5s;
-			left: -5px;
-			position: relative;
-		}
+	.btnn span{
+		transition: 0.5s;
+		left: -5px;
+		position: relative;
+	}
 
-		.btnn:hover span{
-			position: relative;
-			left: 10px;
-			transition: 0.5s;
-		}
+	.btnn:hover span{
+		position: relative;
+		left: 10px;
+		transition: 0.5s;
+	}
 
 
-		/*botão personalizado 2*/
+	/*botão personalizado 2*/
 
-		.btnn2{
-			width: 200px;
-			padding: 0.5rem 0;
-			color: #fff;
-			text-align: center;
-			
-			border-radius: 25px;
-			font-weight: bold;
-			border: 3px solid linear-gradient(60deg, #8e2de2, #0EC0C1);
-			background-color: transparent;
-			cursor: pointer;
-			position: relative;
-			overflow: hidden;
-			z-index: 2;
-		}
+	.btnn2{
+		width: 200px;
+		padding: 0.5rem 0;
+		color: #fff;
+		text-align: center;
 
-		.btnn2 span{
-			background: linear-gradient(-45deg, #8e2de2, #0EC0C1);
-			height: 0%;
-			width: 0%;
-			border-radius: 25px;
-			position: absolute;
-			left: 0;
-			top: 0;
-			transition: 0.5s;
-			z-index: -1;
+		border-radius: 25px;
+		font-weight: bold;
+		border: 3px solid linear-gradient(60deg, #8e2de2, #0EC0C1);
+		background-color: transparent;
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+		z-index: 2;
+	}
 
-		}
-		.btnn2:hover{
-			
-			border: 3px solid transparent;
-			transition: 0.5s;
-			color: #0B142B;
+	.btnn2 span{
+		background: linear-gradient(-45deg, #8e2de2, #0EC0C1);
+		height: 0%;
+		width: 0%;
+		border-radius: 25px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transition: 0.5s;
+		z-index: -1;
 
-		}
-		.btnn2:hover span{
-			width: 100%;
-			height: 100%;
-			transition: 0.5s;
-			
-		}
+	}
+	.btnn2:hover{
+
+		border: 3px solid transparent;
+		transition: 0.5s;
+		color: #0B142B;
+
+	}
+	.btnn2:hover span{
+		width: 100%;
+		height: 100%;
+		transition: 0.5s;
+
+	}
 
 		/*scroll progress*/
 
