@@ -187,6 +187,7 @@ main{
 #home{
 	background: transparent;
 	color: #3C434E;
+	box-shadow: none;
 }
 i{
 	color: #18191A;
