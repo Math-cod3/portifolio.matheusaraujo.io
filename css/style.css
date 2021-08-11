@@ -92,7 +92,7 @@ header{
 
 .header{
 	display: flex;
-	background-color: #fff;
+	background-color: #212529;
 	justify-content: space-around;
 	align-items:  bottom;
 	padding-top:  10px!important;
@@ -108,7 +108,7 @@ header{
 	font-weight: bolder;
 	letter-spacing: 0px;
 	font-family: 'Poppins', sans-serif;
-	color: #0B142B;
+	color: #d1d1d1;
 	cursor: pointer;
 	position: relative;
 	right: 0px;
@@ -194,7 +194,7 @@ i{
 }
 
 section{
-	margin: 3rem auto;
+	margin: 2rem auto;
 	width: calc(100% - 1.7rem);
 	align-items: center;
 	background-color: #fff;
@@ -211,7 +211,7 @@ section{
 
 .container{
 	width: 100%;
-	padding: 3rem;
+	padding: 2rem;
 	margin-left: 0rem;
   margin-right: 0rem;
   
