@@ -825,6 +825,9 @@ section{
 		body{
 			font-size: 1.2rem;
 		}
+	nav li a{
+		color: #18191A;
+	}
 }
 
 
@@ -835,3 +838,4 @@ section{
     margin-left: auto;
     margin-right: auto;
   }
+}
