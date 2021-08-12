@@ -76,7 +76,6 @@ html{
 header{
 	/*border-bottom: 1px solid #AAA;*/
 	box-shadow: 0px 0px 15px #444;
-	background-color: #fff;
 	
 	position: fixed;
 	width: 100%;
@@ -780,7 +779,7 @@ section{
 	.ativo{
 		top: 0;
 		transition: 0.5s ease;
-		box-shadow: 3px 3px 32px #000;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 	}
 
 	nav{
@@ -793,7 +792,7 @@ section{
 		
 
 
-		background-color: #fff;
+		background-color: #212529;
 		max-width: 250px;
 		position: fixed;
 		top: -150%;
