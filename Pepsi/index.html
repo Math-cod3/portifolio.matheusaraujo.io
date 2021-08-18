@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt-br">
+	<title>Pepsi - Brasil</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/pepsi.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link rel="icon" href="img/logo.png">
+	<script src="https://kit.fontawesome.com/e07450b1d6.js" crossorigin="anonymous"></script>
+	
+</head>
+<body id="body">
+
+	<span class="back" style="font-size: 36px; ">
+	  <a href="../projetos.html#pepsi" data-bs-toggle="popover" title="Voltar"><i class="fas fa-arrow-circle-left" class="back" style="font-size: 36px; "></i></a>
+	</span>
+
+
+	<section class="sec">
+		<header>
+			<a href="#"><img src="img/logo.png" class="logo"></a>
+
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Products</a></li>
+				<li><a href="#">What's New</a></li>
+				<li><a href="#">Newsletter</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</header>
+
+		<div class="conteudo">
+			<div class="textBox">
+				<h2>That's Is What</h2><br>
+				<span>I Like</span>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Cursus metus aliquam eleifend mi in nulla. Elementum nisi quis eleifend quam adipiscing vitae proin.
+				
+				</p>
+				<a href="#">view our products</a>
+			</div>
+			<div class="img">
+				<img loading="lazy" src="img/pepsi001.png" class="pepsi">
+			</div>
+			
+				<ul class="imgBox">
+					<li><img src="img/pepsi001.png" onclick="slideImg('img/pepsi001.png'), changeBg('#0062eb')"></li>
+					<li><img src="img/pepsi002.png" onclick="slideImg('img/pepsi002.png'), changeBg('#e60c2c')"></li>
+					<li><img src="img/pepsi003.png" onclick="slideImg('img/pepsi003.png'), changeBg('#1e1e1e')"></li>
+				</ul>
+				
+				<ul class="social">
+					<li><img src="img/facebook.png"></li>
+					<li><img src="img/twitter.png"></li>
+					<li><img src="img/instagram.png"></li>
+				</ul>
+
+		</div>
+
+		
+
+	</section>
+
+<script>
+		
+		function slideImg(anything){
+
+			document.querySelector('.pepsi').src = anything;
+		}
+
+		function changeBg(e){
+			let body = document.getElementById('body');
+			console.log(body)
+
+			body.style.backgroundColor = e; 
+		}
+
+	</script>
+
+</body>
+</html>

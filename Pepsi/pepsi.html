@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Pespsi 2</title>
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link rel="icon" href="logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="css/pepsi2.css">
+
+</head>
+<body>
+	<section class="grid-container">
+		<header>
+		<a href="#"><span class="logo">LOGO</span></a>
+
+		<input type="checkbox" id="hamburguer" style="display: none;">
+		<label for="hamburguer">
+			<div class="hamburguer" onclick="mudarClasse()">
+				
+			</div>
+		</label>
+		<nav id="meni">
+			<ul><li><a href=""></a>Home</li></ul>
+			<ul><li><a href=""></a>Portifólio</li></ul>
+			<ul><li><a href=""></a>Blog</li></ul>
+			<ul><li><a href=""></a>Serviços</li></ul>
+			<ul><li><a href=""></a>Contato</li></ul>
+			
+		</nav>
+	</header>
+
+		
+
+			<div class="textBox">
+				<h2>FRONT-END</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo. Cursus metus aliquam eleifend mi in nulla. Elementum nisi quis eleifend quam adipiscing vitae proin.
+				</p>
+				<button> view all products</button>
+				
+			</div>
+			
+			<div class="imgBox">
+				<img src="pepsi001.png" style="max-width: 250px;" id="pepsi">
+			</div>
+			<div class="thumb" style="grid-area: t;">
+				<ul>
+					<li><img src="img/pepsi001.png" onclick="alteraLata('pepsi001.png'), bgColor('blue')"></li>
+					<li><img src="img/pepsi002.png" onclick="alteraLata('pepsi002.png'), bgColor('white')"></li>
+					<li><img src="img/pepsi003.png" onclick="alteraLata('pepsi003.png'), bgColor('black')"></li>
+				</ul>
+			</div>
+
+
+	</section>
+
+		<script type="text/javascript">
+			let x = document.getElementById('pepsi')
+			let y = document.querySelector('body')
+
+			function alteraLata(lata){
+				x.src = lata
+				
+			}
+
+			function bgColor(cor){
+				
+				y.style.background = cor
+			}
+
+		</script>
+	
+	<script src="jquery.js"></script>
+			<script>
+				$(document).ready(function(){
+					$('.hamburguer').click(function(){
+						$(this).toggleClass('active')
+						$('.menu').toggleClass('active')
+
+					})
+				})
+			</script>
+</body>
+</html>

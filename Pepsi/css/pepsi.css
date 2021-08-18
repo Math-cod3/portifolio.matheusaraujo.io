@@ -1,0 +1,171 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Lato', sans-serif;
+	
+}
+.back{
+			position: fixed;
+			z-index: 999;
+			top: 10%;
+			left: 3%;
+			filter: invert(1);
+
+		}
+
+
+body{
+	background-color: #0062eb;
+}
+#body{transition: 0.5s}
+
+section{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	
+}
+header
+{
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 100px;
+}
+header ul{
+	right: 40px;
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+}
+header ul li{
+	list-style: none;
+	margin-left: 40px;
+}
+header ul li a
+{
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+.logo{
+	max-width: 40px;
+}
+
+.conteudo
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+.textBox{
+	width: 40%;
+	max-width: 600px;
+	min-width: 500px;
+}
+.conteudo h2{
+	color: #fff;
+	font-size: 4em;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.conteudo span{
+	color: #fff;
+	font-size: 3.5em;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.conteudo p
+{
+	color: #fff;
+	padding: 20px;
+	font-size: 1.2em;
+	line-height: 1.5em;
+}
+.conteudo a{
+	display: inline-block;
+	padding: 8px 20px;
+	color: #111;
+	text-decoration: none;
+	background: #fff;
+	border-radius: 20px;
+	font-weight: 700;
+	margin-top: 40px;
+	flex-wrap: wrap;
+}
+.img
+{
+	display: flex;
+	padding: 40px;
+	margin-top: 50px;
+	margin-right: 90px;
+
+}
+.img img{
+	max-width: 260px;
+}
+.imgBox{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	display: flex;
+	transform: translateX(-50%);
+
+}
+.imgBox li{
+	display: inline-block;
+	list-style: none;
+	margin: 0 20px;
+	cursor: pointer;
+	transition: 0.5s ease;
+}
+.imgBox li img
+{
+	max-width: 40px;
+	transition: 0.5s ease;
+}
+.imgBox li img:hover{
+	transform: translateY(-15px);
+	transition: 0.5s ease;
+}
+.social{
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: translateY(-50%);
+	flex-direction: column;
+}
+.social li{
+	list-style: none;
+
+}
+.social li img{
+	display: inline-block;
+	filter: invert(1);background: none;
+	margin: 5px 0px;
+	transform: scale(0.6);
+}
+
+@media (max-width: 911px){
+	.conteudo{
+		height: 200vh;
+
+	}
+	.textBox{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		padding: 0;
+		text-align: center;
+
+	}
+}
