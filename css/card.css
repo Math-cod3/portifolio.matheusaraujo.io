@@ -60,6 +60,7 @@
 			display: flex;
 			justify-content: center;
 			margin: 1rem auto;
+			border-radius: 10px;
 		}
 		.card-title{
 			color: #0B142B;
