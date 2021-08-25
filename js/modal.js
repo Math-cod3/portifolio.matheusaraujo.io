@@ -1,5 +1,5 @@
 
-var modalBtn = document.getElementByClassName('modal-btn');
+var modalBtn = document.querySelectorAll('.modal-btn');
 var modalBg = document.queryselector('.modal-bg');
 var modalClose = document.queryselector('.modal-close');
 var body = document.queryselector("main");
