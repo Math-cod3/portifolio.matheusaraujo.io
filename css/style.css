@@ -151,7 +151,7 @@ header{
 #nav-menu ul li::after{
 	content: '';
 	height: 4px;
-	border-radius: 2px;
+/* 	border-radius: 2px; */
 	background: linear-gradient(60deg, #ea4c89, #ea4c89);
 	left: 50%;
 	position: absolute;
@@ -161,13 +161,13 @@ header{
 }
 
 #nav-menu ul li:hover::after{
-	width: 100%;
+	width: 50%;
 	transition: 0.5s ease-in-out;
 }
 #nav-menu ul li::before{
 	content: '';
 	height: 4px;
-	border-radius: 2px;
+/* 	border-radius: 2px; */
 	background: linear-gradient(60deg, #ea4c89, #ea4c89);
 	right: 50%;
 	position: absolute;
@@ -176,7 +176,7 @@ header{
 	transition: 0.5s ease;
 }
 #nav-menu ul li:hover::before{
-	width: 100%;
+	width: 50%;
 	transition: 0.5s ease-in-out;
 }
 
