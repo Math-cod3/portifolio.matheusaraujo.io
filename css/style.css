@@ -152,14 +152,29 @@ header{
 	content: '';
 	height: 4px;
 	border-radius: 2px;
-	background: linear-gradient(60deg, #ea4c89, #0EC0C1);
-	left: 0;
+	background: linear-gradient(60deg, #ea4c89, #ea4c89);
+	left: 50%;
 	position: absolute;
 	width: 0;
 	bottom: -10px;
 	transition: 0.5s ease;
 }
 
+#nav-menu ul li:hover::after{
+	width: 100%;
+	transition: 0.5s ease-in-out;
+}
+#nav-menu ul li::before{
+	content: '';
+	height: 4px;
+	border-radius: 2px;
+	background: linear-gradient(60deg, #ea4c89, #ea4c89);
+	right: 50%;
+	position: absolute;
+	width: 0;
+	bottom: -10px;
+	transition: 0.5s ease;
+}
 #nav-menu ul li:hover::after{
 	width: 100%;
 	transition: 0.5s ease-in-out;
