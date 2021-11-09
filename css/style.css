@@ -794,7 +794,7 @@ section{
 		background: #4a00e0;
 	}
 	.ativo{
-		top: 0;
+		right: 0;
 		transition: 0.5s ease;
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 	}
@@ -812,8 +812,7 @@ section{
 		background-color: #212529;
 		max-width: 250px;
 		position: fixed;
-		top: -150%;
-		right: 0;
+		right: -100%;
 		transition: 0.5s ease;
 
 	}
