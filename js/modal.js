@@ -1,16 +1,45 @@
+function Modal() {
 
-var modalBtn = document.querySelectorAll('.modal-btn');
-var modalBg = document.queryselector('.modal-bg');
-var modalClose = document.queryselector('.modal-close');
-var body = document.queryselector("main");
+	const bgModal = document.querySelector('#modal-bg')
+
+	let modalFunc = {
+		closeModal: () => {
+			let closeBtn = document.querySelector('.modal-close')
+			closeBtn.addEventListener('click', function () {
+
+				bgModal.classList.remove("bg-active");
+				bgModal.classList.add("bg-inactive");
+
+			})
+			bgModal.addEventListener('click', () => {
+				bgModal.classList.remove("bg-active");
+				bgModal.classList.add("bg-inactive");
+			})
+
+		},
+		ableModal: () => {
+
+			const imgs = document.querySelectorAll('.poster img')
+
+			imgs.forEach(img => {
+				img.addEventListener('click', () => {
+					bgModal.classList.remove("bg-inactive");
+					bgModal.classList.add("bg-active");
+					let image = document.querySelector(".mymodal img")
+					let imgAttr = img.getAttribute('src')
+
+					image.src = imgAttr
+
+				})
+
+			});
 
 
-modalBtn.addEventListener('click', function (){
-	modalBg.classList.add('bg-active');
-	body.style 
-});
+		}
+	}
 
+	modalFunc.ableModal()
+	modalFunc.closeModal()
 
-modalClose.addEventListener('click', function (){
-	modalBg.classList.remove('bg-active');
-});
+}
+Modal()
