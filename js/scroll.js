@@ -1,26 +1,3 @@
-// const target = document.querySelectorAll('[data-anime]');
-//       const animationClass = 'animate';
-
-//       function animeScroll(){
-//         const windowTop = window.pageYOffset + ((window.innerHeight * 0.75));
-
-//         target.forEach(function(element){
-//           if(windowTop > element.offsetTop){
-//             element.classList.add(animationClass);
-//           } else {
-//             element.classList.remove(animationClass);
-//           }
-//         })
-//       }
-
-//       animeScroll();
-
-//       window.addEventListener('scroll', function(){
-//         animeScroll();
-//       })
-
-      //
-
 
 const debounce = function(func, wait, immediate) {
   let timeout;
@@ -41,7 +18,6 @@ const target = document.querySelectorAll('[data-anime]');
 const animationClass = 'animate';
 
 function animeScroll() {
-  console.log("ativou")
   const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
   target.forEach(function(element) {
     if((windowTop) > element.offsetTop) {
