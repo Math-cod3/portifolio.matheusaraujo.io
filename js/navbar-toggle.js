@@ -12,9 +12,8 @@ window.addEventListener('scroll', () => {
 
 function handleScroll() {
     const {
-        clientHeight,
         scrollTop,
-        scrollHeight
+        innerWidth
     } = document.documentElement
 
     const isScroll = scrollTop <= 90
@@ -26,10 +25,13 @@ function handleScroll() {
 
         logo.style.color = '#000000'
 
-        links.forEach(link => {
-            link.style.color = '#000000'
-        })
+        if (innerWidth > 999) {
 
+            links.forEach(link => {
+                link.style.color = '#000000'
+            })
+
+        }
 
     } else {
         navbar.style.background = '#0D0C22'
