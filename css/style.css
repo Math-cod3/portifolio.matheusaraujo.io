@@ -291,6 +291,10 @@ section {
 	z-index: 99;
 }*/
 
+#type{
+	height: 210px;
+}
+
 #type:after {
 	content: ' |';
 	animation: pisca 1s infinite;
