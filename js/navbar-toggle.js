@@ -1,7 +1,3 @@
-const navbar = document.querySelector('.header')
-const logo = document.querySelector('.logo')
-const links = document.querySelectorAll('#nav-menu ul li a')
-
 handleScroll()
 
 window.addEventListener('scroll', () => {
@@ -11,6 +7,9 @@ window.addEventListener('scroll', () => {
 })
 
 function handleScroll() {
+    const navbar = document.querySelector('.header')
+    const logo = document.querySelector('.logo')
+    const links = document.querySelectorAll('#nav-menu ul li a')
     const {
         scrollTop,
         innerWidth
@@ -36,6 +35,7 @@ function handleScroll() {
     } else {
         navbar.style.background = '#0D0C22'
         navbar.style.paddingTop = '10px'
+        // navbar.style.boxShadow = '4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);'
 
         logo.style.color = '#d1d1d1'
 
