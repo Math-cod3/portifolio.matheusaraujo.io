@@ -10,6 +10,7 @@ function handleScroll() {
     const navbar = document.querySelector('.header')
     const logo = document.querySelector('.logo')
     const links = document.querySelectorAll('#nav-menu ul li a')
+    const icon - document.querySelector('.hamburguer')
     const {
         scrollTop,
         innerWidth
@@ -21,6 +22,7 @@ function handleScroll() {
         navbar.style.background = 'none'
         navbar.style.boxShadow = 'none'
         navbar.style.paddingTop = '30px'
+        icon.style.bachground = '#fff'
 
         logo.style.color = '#000000'
 
