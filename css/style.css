@@ -507,7 +507,7 @@ section {
 
 .poster span h5 {
 	color: #fff;
-
+	text-align: center;
 	opacity: 0;
 	transition: 0.5s ease;
 }
