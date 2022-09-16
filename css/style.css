@@ -153,7 +153,7 @@ header {
 #nav-menu ul li:hover a {
 
 	text-decoration: none;
-	color: #ea4c89;
+	color: #0EC0C1;
 	font-weight: bold;
 	transition: 0.5s ease;
 	opacity: 1;
@@ -163,7 +163,7 @@ header {
 	content: '';
 	height: 4px;
 	/* 	border-radius: 2px; */
-	background: linear-gradient(60deg, #ea4c89, #ea4c89);
+	background: #0EC0C1;
 	left: 50%;
 	position: absolute;
 	width: 0;
@@ -180,7 +180,7 @@ header {
 	content: '';
 	height: 4px;
 	/* 	border-radius: 2px; */
-	background: linear-gradient(60deg, #ea4c89, #ea4c89);
+	background: #0EC0C1;
 	right: 50%;
 	position: absolute;
 	width: 0;
@@ -202,7 +202,7 @@ header {
 }
 
 #nav-menu li:hover #carta {
-	color: #ea4c89;
+	color: #0EC0C1;
 	transition: 0.5s ease-in-out;
 }
 
@@ -307,13 +307,14 @@ section {
 /*botão personalizado*/
 
 .btnn {
-	width: 200px;
+	width: 12.5rem;
 	padding: 0.5rem 0;
 	color: #fff;
 	text-align: center;
-	border-radius: 25px;
+	border-radius: 0.625rem;
 	font-weight: bold;
 	background-color: #0B142B;
+	border: 3px solid #fff;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
@@ -337,39 +338,40 @@ section {
 /*botão personalizado 2*/
 
 .btnn2 {
-	width: 200px;
+	width: 12.5rem;
 	padding: 0.5rem 0;
 	color: #fff;
 	text-align: center;
 
-	border-radius: 25px;
+	border-radius: 0.625rem;
 	font-weight: bold;
-	border: 3px solid linear-gradient(60deg, #8e2de2, #0EC0C1);
-	background-color: transparent;
+	border: 3px solid transparent;
+	background-color: #67159C ;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
 	z-index: 2;
 }
 
-.btnn2 span {
-	background: linear-gradient(-45deg, #8e2de2, #0EC0C1);
+/* .btnn2 span {
+	background: #0D0C22;
 	height: 0%;
 	width: 0%;
-	border-radius: 25px;
+	border-radius: 0.625rem;
 	position: absolute;
 	left: 0;
 	top: 0;
 	transition: 0.5s;
 	z-index: -1;
 
-}
+} */
 
 .btnn2:hover {
 
 	border: 3px solid transparent;
-	transition: 0.5s;
-	color: #0B142B;
+	transition: 0.2s;
+	background-color: #48116d ;
+	color: rgb(188, 185, 204);
 
 }
 
@@ -823,7 +825,7 @@ section {
 		content: '';
 		position: absolute;
 		width: 70%;
-		background: #4a00e0;
+		background: #ffffff;
 		height: 10%;
 		margin: auto;
 		border-radius: 40%;
@@ -837,7 +839,7 @@ section {
 		content: '';
 		position: absolute;
 		width: 50%;
-		background: #4a00e0;
+		background: #ffffff;
 		height: 10%;
 
 		border-radius: 40%;
@@ -851,7 +853,7 @@ section {
 		transform: rotate(225deg);
 		width: 80%;
 		top: 45%;
-		background: #4a00e0;
+		background: #0EC0C1;
 
 	}
 
@@ -859,7 +861,7 @@ section {
 		transform: rotate(-225deg);
 		width: 80%;
 		top: 45%;
-		background: #4a00e0;
+		background: #0EC0C1;
 	}
 
 	.ativo {
