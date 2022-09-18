@@ -18,11 +18,9 @@ function handleScroll() {
     const isScroll = scrollTop <= 90
 
     if (isScroll) {
-        navbar.style.background = 'none'
-        navbar.style.boxShadow = 'none'
-        navbar.style.paddingTop = '30px'
-
+        navbar.classList.add('scrolled')
         logo.style.color = '#000000'
+
 
         if (innerWidth > 999) {
 
@@ -33,9 +31,7 @@ function handleScroll() {
         }
 
     } else {
-        navbar.style.background = '#0D0C22'
-        navbar.style.paddingTop = '10px'
-        // navbar.style.boxShadow = '4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);'
+        navbar.classList.remove('scrolled')
 
         logo.style.color = '#d1d1d1'
 
