@@ -220,6 +220,9 @@ header {
 	color: #0EC0C1;
 	transition: 0.5s ease-in-out;
 }
+.img-fluid {
+	border: 1px solid #000;
+}
 
 .link-download {
 
@@ -408,7 +411,6 @@ h2 {
 
 .btnn2:hover {
 
-	border: 3px solid transparent;
 	transition: 0.2s;
 	background-color: #4809b6 ;
 	color: rgb(188, 185, 204);
