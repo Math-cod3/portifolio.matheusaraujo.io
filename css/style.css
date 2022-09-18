@@ -384,7 +384,7 @@ h2 {
 
 	border-radius: 0.625rem;
 	font-weight: bold;
-	border: 3px solid transparent;
+	border: 1px solid #000;
 	background-color: #5D00FA ;
 	cursor: pointer;
 	position: relative;
@@ -768,10 +768,14 @@ footer p {
 	transition: .5s ease-in-out;
 }
 .container-gear i {
-	font-size: 25px;
+	font-size: 29px;
 	cursor: pointer;
 	transition: .2s ease-in-out;
+	color: #ccc;
 	/* z-index: 101; */
+}
+.container-gear i:hover{
+	filter: brightness(0.8);
 }
 
 .active-theme {
