@@ -20,7 +20,11 @@ function handleScroll() {
     if (isScroll) {
         navbar.classList.add('scrolled')
         logo.style.color = '#000000'
-
+        
+        if(document.body.classList.contains('')){
+             logo.style.color = '#d1d1d1'
+        }
+        
 
         if (innerWidth > 999) {
 
