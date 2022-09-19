@@ -1,5 +1,8 @@
 "# portifolio.matheusaraujo.io" 
 Portifólio pessoal
+<div align="center">
+<img src="https://user-images.githubusercontent.com/79392166/190942930-d52b6cb8-786d-43d0-92e4-1edbe3b2430c.jpg">
+</div>
 Um pequeno projeto criado com intuito de mostrar um pouco de minha jornada como desenvolvedor front-end, lá se encontram links de outros projetos.
 
 🚀 Começando
