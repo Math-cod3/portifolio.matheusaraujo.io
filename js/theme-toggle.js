@@ -9,7 +9,8 @@ function switchTheme(theme) {
     const paragraphs = document.querySelectorAll('p')
     const h2 = document.querySelectorAll('h2')
     const title = document.querySelector('h1')
-    const logo = document.querySelector('.logo')
+    const iconSectionSkill = document.querySelector('.main-content-skill span i')
+    // const logo = document.querySelector('.logo')
 
     toWhite() // default theme
     dotWhite.classList.add('active-theme')
@@ -40,6 +41,7 @@ function switchTheme(theme) {
         dotPurple.classList.remove('active-theme');
         dotWhite.classList.add('active-theme');
         dotBlue.classList.remove('active-theme');
+        // iconSectionSkill.style.color = '#0B142B'
 
         body.style.color = '#18191A'
         title.style.color = '#22292F'
@@ -75,6 +77,7 @@ function switchTheme(theme) {
         dotPurple.classList.add('active-theme');
         dotWhite.classList.remove('active-theme');
         dotBlue.classList.remove('active-theme');
+        // iconSectionSkill.style.color = '#0B142B'
 
         body.style.color = '#18191A'
         title.style.color = '#22292F'
@@ -107,6 +110,7 @@ function switchTheme(theme) {
         dotPurple.classList.remove('active-theme');
         dotWhite.classList.remove('active-theme');
         dotBlue.classList.remove('active-theme');
+        // iconSectionSkill.style.color = '#fff'
 
         // texts theme
 
@@ -116,7 +120,6 @@ function switchTheme(theme) {
         // sections theme
 
         sections.forEach(item => {
-
             item.style.background = '#242526'
 
         })
@@ -143,6 +146,7 @@ function switchTheme(theme) {
         dotPurple.classList.remove('active-theme');
         dotWhite.classList.remove('active-theme');
         dotBlack.classList.remove('active-theme');
+        // iconSectionSkill.style.color = '#0B142B'
 
         body.style.color = '#18191A'
         title.style.color = '#22292F'
@@ -181,9 +185,6 @@ function handleSwitchTheme() {
     } else {
         toggler.classList.remove('active-themeToggler')
     }
-
-
-
 
 }
 
