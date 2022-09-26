@@ -12,7 +12,7 @@ function switchTheme(theme) {
     const iconSectionSkill = document.querySelector('.main-content-skill span i')
     // const logo = document.querySelector('.logo')
 
-    toWhite() // default theme
+    // toWhite() // default theme
     dotWhite.classList.add('active-theme')
 
     switch (theme) {
@@ -32,6 +32,7 @@ function switchTheme(theme) {
     }
 
     function toWhite() {
+        localStorage.setItem('active-theme', 'white');
         body.classList.remove('theme-purple');
         body.classList.remove('theme-black');
         body.classList.add('theme-white');
@@ -68,6 +69,7 @@ function switchTheme(theme) {
     }
 
     function toPurple() {
+        localStorage.setItem('active-theme', 'purple')
         body.classList.remove('theme-white');
         body.classList.remove('theme-black');
         body.classList.add('theme-purple')
@@ -101,6 +103,7 @@ function switchTheme(theme) {
     }
 
     function toBlack() {
+        localStorage.setItem('active-theme', 'black')
         body.classList.remove('theme-white');
         body.classList.remove('theme-purple');
         body.classList.add('theme-black');
@@ -137,6 +140,7 @@ function switchTheme(theme) {
     }
 
     function toBlue() {
+        localStorage.setItem('active-theme', 'blue')
         body.classList.remove('theme-white');
         body.classList.remove('theme-purple');
         body.classList.remove('theme-black');
@@ -171,6 +175,16 @@ function switchTheme(theme) {
 
     }
 
+    function getstoreActiveTheme(){
+        let activeTheme = localStorage.getItem('active-theme') 
+        
+        activeTheme = activeTheme == 'white' ? toWhite() : activeTheme
+        activeTheme = activeTheme == 'purple'? toPurple() : activeTheme
+        activeTheme = activeTheme == 'black'? toBlack() : activeTheme
+        activeTheme = activeTheme == 'blue'? toBlue() : activeTheme
+        
+    }
+    getstoreActiveTheme()
 
 }
 
