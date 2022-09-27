@@ -94,6 +94,7 @@ function switchTheme(theme) {
             item.style.color = '#18191A'
 
         })
+        paragraphs[0].style.color = '#d1d1d1'
 
         h2.forEach(item => {
             item.style.color = '#0D0C22'
