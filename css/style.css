@@ -353,7 +353,7 @@ h2 {
 	text-align: center;
 	border-radius: 0.3125rem;
 	font-weight: bold;
-	background-color: #5D00FA;
+	background-color: #7450E9;
 	border: 3px solid transparent;
 	cursor: pointer;
 	position: relative;
@@ -385,8 +385,8 @@ h2 {
 
 	border-radius: 0.3125rem;
 	font-weight: bold;
-	border: 1px solid #000;
-	background-color: #5D00FA ;
+	border: none;
+	background-color: #7450E9 ;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
@@ -441,8 +441,8 @@ h2 {
 	height: 6.25rem;
 	border-radius: 5px;
 	margin: 0.625rem;
-	background: #5D00FA;
-	border: 1px solid #000;
+	background: #7450E9;
+	border: none;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -453,7 +453,8 @@ h2 {
 	top: 0;
 }
 .sub-content-skill-card:hover {
-	filter: brightness(0.7);
+	filter: brightness(0.7); 
+	box-shadow: 3px 5px 2px rgb(0 0 0 / 0.4);
 	top: -15px;
 	transition: 0.5s ease;
 }
@@ -464,6 +465,7 @@ h2 {
 }
 /* soft skills */
 .card-softskill { background-color: none!important; }
+.card-softskill img { filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)); }
 
 /*Seção albuns*/
 
@@ -974,6 +976,7 @@ footer p {
 		background-color: #212529;
 		max-width: 250px;
 		position: fixed;
+		top: 0;
 		right: -100%;
 		transition: 0.5s ease;
 
