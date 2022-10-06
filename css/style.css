@@ -332,7 +332,7 @@ h2 {
 }*/
 
 #type{
-	height: 210px;
+	height: 8.125rem;
 }
 
 #type:after {
@@ -706,6 +706,7 @@ footer p {
 
 .container-gear { 
 	padding: 0.9375rem;
+	padding-bottom: 0;
 	transition: .5s ease-in-out;
 }
 .container-gear i {
