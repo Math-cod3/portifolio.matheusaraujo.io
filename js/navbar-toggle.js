@@ -39,8 +39,8 @@ function handleScroll() {
 
         logo.style.color = '#d1d1d1'
 
-        links.forEach(link => {
-            link.style.color = '#d1d1d1'
-        })
+        // links.forEach(link => {
+        //     link.style.color = '#d1d1d1'
+        // })
     }
 }

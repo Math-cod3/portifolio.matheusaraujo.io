@@ -443,7 +443,7 @@ h2 {
 	margin: 0.625rem;
 	background: #7450E9;
 	border: none;
-	border-radius: 50%;
+	border-radius: 0.3125rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
