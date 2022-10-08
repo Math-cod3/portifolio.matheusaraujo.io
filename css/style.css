@@ -332,7 +332,8 @@ h2 {
 }*/
 
 #type{
-	height: 8.125rem;
+/* 	height: 8.125rem; */
+	margin-bottom: 20px!important;
 }
 
 #type:after {
