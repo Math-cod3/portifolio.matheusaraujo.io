@@ -12,7 +12,7 @@ function switchTheme(theme) {
     const iconSectionSkill = document.querySelector('.main-content-skill span i')
     // const logo = document.querySelector('.logo')
 
-    // toWhite() // default theme
+    toWhite() // default theme
     dotWhite.classList.add('active-theme')
 
     switch (theme) {
