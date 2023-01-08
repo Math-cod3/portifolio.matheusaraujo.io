@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', ()=>{
+    switchTheme()
+})
+
 function switchTheme(theme) {
     const body = document.body
 
@@ -12,8 +16,7 @@ function switchTheme(theme) {
     const iconSectionSkill = document.querySelector('.main-content-skill span i')
     // const logo = document.querySelector('.logo')
 
-    toWhite() // default theme
-    dotWhite.classList.add('active-theme')
+    getstoreActiveTheme()
 
     switch (theme) {
         case 'white':
@@ -178,14 +181,17 @@ function switchTheme(theme) {
 
     function getstoreActiveTheme(){
         let activeTheme = localStorage.getItem('active-theme') 
+
+        activeTheme = activeTheme == null ? toWhite() : activeTheme
         
         activeTheme = activeTheme == 'white' ? toWhite() : activeTheme
         activeTheme = activeTheme == 'purple'? toPurple() : activeTheme
         activeTheme = activeTheme == 'black'? toBlack() : activeTheme
         activeTheme = activeTheme == 'blue'? toBlue() : activeTheme
+
         
     }
-    getstoreActiveTheme()
+    
 
 }
 
@@ -197,6 +203,7 @@ function handleSwitchTheme() {
 
     if (!isOpen && !toggler.classList.contains('active-themeToggler')) {
         toggler.classList.add('active-themeToggler')
+        isOpen = true
     } else {
         toggler.classList.remove('active-themeToggler')
     }
@@ -205,4 +212,4 @@ function handleSwitchTheme() {
 
 
 // handleSwitchTheme()
-switchTheme()
+
