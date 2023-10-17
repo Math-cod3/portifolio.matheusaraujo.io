@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Charadas Bíblicas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        #resposta {
+            color: #007BFF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Charada Bíblica</h2>
+    <button onclick="sortearCharada()">Sortear Charada</button>
+    <p id="charada"></p>
+    <p id="resposta"></p>
+
+    <script>
+        const charadas = [
+            { pergunta: "Nunca fui mordido por uma cobra, mas fui conhecido por segurar uma que se transformou. Quem sou eu?", resposta: "Moisés." },
+            { pergunta: "Tinha muito cabelo e perdi minha força por causa de uma mulher. Quem sou eu?", resposta: "Sansão." },
+            { pergunta: "Fui engolido por um grande peixe e passei três dias em seu interior antes de ser cuspido. Quem sou eu?", resposta: "Jonas." },
+            //... (adicione todas as outras charadas aqui)
+        ];
+
+        function sortearCharada() {
+            const indexAleatorio = Math.floor(Math.random() * charadas.length);
+            const charadaSorteada = charadas[indexAleatorio];
+
+            document.getElementById("charada").innerText = charadaSorteada.pergunta;
+            document.getElementById("resposta").innerText = charadaSorteada.resposta;
+        }
+    </script>
+</body>
+</html>

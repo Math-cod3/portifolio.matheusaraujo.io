@@ -1,10 +1,3 @@
-handleScroll()
-
-window.addEventListener('scroll', () => {
-
-    handleScroll()
-
-})
 
 function handleScroll() {
     const navbar = document.querySelector('.header')
@@ -17,13 +10,15 @@ function handleScroll() {
 
     const isScroll = scrollTop <= 90
 
+    if(window.localStorage.getItem('active-theme') == 'black'){
+        logo.style.color = '#d1d1d1'
+    }
+
     if (isScroll) {
         navbar.classList.add('scrolled')
-        logo.style.color = '#000000'
-        
-        if(document.body.classList.contains('')){
-             logo.style.color = '#d1d1d1'
-        }
+        console.log('scrolled!!!')
+
+
         
 
         if (innerWidth > 999) {
@@ -44,3 +39,7 @@ function handleScroll() {
         // })
     }
 }
+
+window.addEventListener('scroll', debounce(() => {
+    handleScroll()
+}, 10))

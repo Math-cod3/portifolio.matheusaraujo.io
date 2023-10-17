@@ -1,5 +1,5 @@
 
-const debounce = function(func, wait, immediate) {
+const debounce = (func, wait, immediate)=> {
   let timeout;
   return function(...args) {
     const context = this;
