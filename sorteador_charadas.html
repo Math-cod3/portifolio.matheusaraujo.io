@@ -1,78 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteador de Charadas Bíblicas</title>
+    <title>Charadas Bíblicas</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #ddd;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        h2 {
-            color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #2c2c2c;
+            color: #f1f1f1;
+            text-align: center;
+            padding: 50px;
         }
 
         button {
-            background-color: #444;
-            color: white;
+            padding: 15px 25px;
+            background-color: #333;
             border: none;
-            padding: 10px 20px;
             border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            color: #f1f1f1;
+            font-size: 16px;
         }
 
         button:hover {
-            background-color: #666;
-        }
-
-        p {
-            background-color: #2a2a2a;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            margin-top: 20px;
-            width: 80%;
-            max-width: 600px;
-        }
-
-        #resposta {
-            color: #58a6ff;
-            font-weight: bold;
+            background-color: #555;
         }
     </style>
 </head>
+
 <body>
-    <h2>Charada Bíblica</h2>
-    <button onclick="sortearCharada()">Sortear Charada</button>
+    <h1>Charadas Bíblicas</h1>
+    <button onclick="mostrarCharada()">Sortear Charada</button>
     <p id="charada"></p>
     <p id="resposta"></p>
+    <p id="citacao"></p>
 
     <script>
         const charadas = [
-            { pergunta: "Nunca fui mordido por uma cobra, mas fui conhecido por segurar uma que se transformou. Quem sou eu?", resposta: "Moisés." },
-            { pergunta: "Tinha muito cabelo e perdi minha força por causa de uma mulher. Quem sou eu?", resposta: "Sansão." },
-            { pergunta: "Fui engolido por um grande peixe e passei três dias em seu interior antes de ser cuspido. Quem sou eu?", resposta: "Jonas." },
-            //... (adicione todas as outras charadas aqui)
-        ];
+    { pergunta: "Nunca fui mordido por uma cobra, mas fui conhecido por segurar uma que se transformou. Quem sou eu?", resposta: "Moisés.", citacao: "Êxodo 4:3-4" },
+    { pergunta: "Tinha muito cabelo e perdi minha força por causa de uma mulher. Quem sou eu?", resposta: "Sansão.", citacao: "Juízes 16:17-19" },
+    { pergunta: "Fui engolido por um grande peixe e passei três dias em seu interior antes de ser cuspido. Quem sou eu?", resposta: "Jonas.", citacao: "Jonas 1:17" },
+    { pergunta: "Sou conhecido por minha sabedoria e construí um magnífico templo. Quem sou eu?", resposta: "Salomão.", citacao: "1 Reis 3:12; 1 Reis 6:1-38" },
+    { pergunta: "Fui criado sem os pecados originais e sou a mãe de Jesus. Quem sou eu?", resposta: "Maria.", citacao: "Lucas 1:28-35" },
+    { pergunta: "Coloquei Jesus em meu colo quando Ele era apenas um bebê no templo. Quem sou eu?", resposta: "Simeão.", citacao: "Lucas 2:25-34" },
+    { pergunta: "Fui avisado em um sonho para não prejudicar Jesus e mais tarde me lavei as mãos em relação a Ele. Quem sou eu?", resposta: "Pôncio Pilatos.", citacao: "Mateus 27:24-26" },
+    { pergunta: "Eu era cego, mas Jesus me curou usando lama e água. Quem sou eu?", resposta: "O cego de nascença.", citacao: "João 9:1-7" },
+    { pergunta: "Betânia era minha casa e Jesus chorou quando morri. Quem sou eu?", resposta: "Lázaro.", citacao: "João 11:43-44" },
+    { pergunta: "Fui o primeiro rei de Israel, mas desobedeci a Deus e perdi Seu favor. Quem sou eu?", resposta: "Saul.", citacao: "1 Samuel 15:22-23" },
+    { pergunta: "Traí Jesus por 30 moedas de prata. Quem sou eu?", resposta: "Judas Iscariotes.", citacao: "Mateus 26:14-16" },
+    { pergunta: "Eu era um cobrador de impostos antes de me tornar um dos discípulos. Quem sou eu?", resposta: "Mateus.", citacao: "Mateus 9:9-13" },
+    { pergunta: "Jesus usou meus cinco pães e dois peixes para alimentar uma multidão. Quem sou eu?", resposta: "O menino com os pães e peixes.", citacao: "João 6:9-13" },
+    { pergunta: "Apareci a Abraão e a Sara para anunciar o nascimento de seu filho. Quem sou eu?", resposta: "O anjo do Senhor.", citacao: "Gênesis 18:10-15" },
+    { pergunta: "Fui perseguido por uma rainha malvada, mas com a ajuda de Deus, provei que Baal não tinha poder. Quem sou eu?", resposta: "Elias.", citacao: "1 Reis 18:21-39" },
+    { pergunta: "Tive um sonho sobre uma grande estátua feita de diferentes metais e um grande pedra. Quem sou eu?", resposta: "Nabucodonosor.", citacao: "Daniel 2:31-45" },
+    { pergunta: "Pedi a cabeça de João Batista em um prato. Quem sou eu?", resposta: "Salomé.", citacao: "Marcos 6:22-28" },
+    { pergunta: "Construí uma arca para salvar minha família e os animais do dilúvio. Quem sou eu?", resposta: "Noé.", citacao: "Gênesis 6:13-22" },
+    { pergunta: "Fui chamado por Deus para sair da minha terra e ir para um lugar desconhecido. Quem sou eu?", resposta: "Abraão.", citacao: "Gênesis 12:1-4" },
+    { pergunta: "Lutei com um anjo e tive meu nome mudado por Deus. Quem sou eu?", resposta: "Jacó.", citacao: "Gênesis 32:24-30" }
+];
 
-        function sortearCharada() {
-            const indexAleatorio = Math.floor(Math.random() * charadas.length);
-            const charadaSorteada = charadas[indexAleatorio];
 
-            document.getElementById("charada").innerText = charadaSorteada.pergunta;
-            document.getElementById("resposta").innerText = charadaSorteada.resposta;
+        function mostrarCharada() {
+            const sorteio = Math.floor(Math.random() * charadas.length);
+            const charadaSorteada = charadas[sorteio];
+
+            document.getElementById('charada').innerText = charadaSorteada.pergunta;
+            document.getElementById('resposta').innerText = "Resposta: " + charadaSorteada.resposta;
+            document.getElementById('citacao').innerText = "Citação Bíblica: " + charadaSorteada.citacao;
         }
     </script>
 </body>
+
 </html>
