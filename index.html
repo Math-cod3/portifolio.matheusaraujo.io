@@ -1,618 +1,284 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-216838519-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matheus Araujo · Desenvolvedor Front-End · React &amp; Next.js</title>
+<meta name="description" content="Matheus Araujo — Desenvolvedor Front-End (React & Next.js) com base full-stack. Currículo, experiência e contato.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E1318;
+    --bg-alt:#141A21;
+    --card:#171E26;
+    --ink:#E9EDF1;
+    --muted:#8C98A4;
+    --faint:#5C6773;
+    --hair:#252E38;
+    --add:#4FB477;
+    --add-soft:#16241C;
+    --ctx:#C97B52;
+    --ctx-soft:#2A2019;
+    --link:#7FB8E0;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .mono{ font-family:'IBM Plex Mono', ui-monospace, Menlo, monospace; }
+  a{ color:var(--link); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--add); outline-offset:2px; }
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+  .wrap{ max-width:760px; margin:0 auto; padding:0 22px; }
 
-    gtag('config', 'UA-216838519-1');
-  </script>
+  .statusbar{
+    background:var(--bg-alt); border-bottom:1px solid var(--hair);
+    padding:9px 0; font-size:12px;
+  }
+  .statusbar .wrap{ display:flex; align-items:center; gap:10px; }
+  .dot-live{ width:7px; height:7px; border-radius:50%; background:var(--add); box-shadow:0 0 0 3px var(--add-soft); flex:none; }
+  .statusbar .txt{ color:var(--muted); }
+  .statusbar .txt b{ color:var(--ink); font-weight:600; }
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function (w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-T67X783');
-  </script>
-  <!-- End Google Tag Manager -->
-  <!-- Meta tags Obrigatórias -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-  <meta name="theme-color" content="#0D0C22">
-  <script src='https://www.google.com/recaptcha/api.js'></script>
-  <!--  META TAGS SEO -->
-  <meta name="description"
-    content="Me chamo Matheus Araujo, sou estudante de Tecnologia e Análise de Sistemas, Desenvolvedor Front-End, Designer Gráfico e apaixonado por programação e tecnologia.">
-  <link rel="canonical" href="https://math-cod3.github.io/portifolio.matheusaraujo.io/">
-  <meta name="author" content="Matheus de Araujo">
-  <meta name="robots" content="index">
+  header.hero{ padding:52px 0 40px; border-bottom:1px solid var(--hair); }
+  .eyebrow{ font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--add); font-weight:600; margin-bottom:14px; }
+  .eyebrow::before{ content:"$ "; color:var(--faint); }
+  h1{ font-size:clamp(28px,5vw,40px); font-weight:700; margin:0 0 6px; letter-spacing:-0.01em; }
+  .role{ font-size:16px; color:var(--muted); margin-bottom:22px; }
+  .role .sep{ color:var(--faint); margin:0 8px; }
+  .lede{ font-size:15.5px; color:#C6CDD4; max-width:58ch; margin-bottom:24px; }
+  .contacts{ display:flex; flex-wrap:wrap; gap:8px 18px; font-size:13.5px; }
+  .contacts a, .contacts span{ color:var(--muted); display:inline-flex; align-items:center; gap:6px; }
+  .contacts a:hover{ color:var(--add); }
 
-  <!-- Google+ / Schema.org -->
-  <meta itemprop="name" content="🌈Portifólio &#x000B7; Matheus Araujo &#x000B7; Front-end Developer">
-  <meta itemprop="description"
-    content="Me chamo Matheus Araujo, sou estudante de Tecnologia e Análise de Sistemas, Desenvolvedor Front-End, Designer Gráfico e apaixonado por programação e tecnologia.">
-  <meta itemprop="image" content="img/link__img.jpg">
-  <link href="http://plus.google.com/+SuaPagina" rel="publisher">
+  section{ padding:42px 0; border-bottom:1px solid var(--hair); }
+  section:last-of-type{ border-bottom:none; }
+  .sec-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:22px; }
+  .sec-head .tag{ font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); }
+  .sec-head h2{ font-size:19px; font-weight:700; margin:0; }
 
-  <!-- OPen Graph Facebook -->
-  <meta property="og:title" content="Portifólio &#x000B7; Matheus Araujo &#x000B7; Front-end Developer">
-  <meta property="og:description"
-    content="Me chamo Matheus Araujo, sou estudante de Tecnologia e Análise de Sistemas, Desenvolvedor Front-End, Designer Gráfico e apaixonado por programação e tecnologia.">
-  <meta property="og:url" content="https://math-cod3.github.io/portifolio.matheusaraujo.io/">
-  <meta property="og:site_name" content="Portifólio &#x000B7; Matheus Araujo &#x000B7; Front-end Developer">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="img/link__img.jpg">
+  .about p{ font-size:15px; color:#C6CDD4; max-width:62ch; margin:0 0 14px; }
+  .about p:last-child{ margin-bottom:0; }
 
-  <!-- twitter -->
-  <meta name="twitter:title" content="Portifólio &#x000B7; Matheus Araujo &#x000B7; Front-end Developer">
-  <meta name="twitter:description"
-    content="Me chamo Matheus Araujo, sou estudante de Tecnologia e Análise de Sistemas, Desenvolvedor Front-End, Designer Gráfico e apaixonado por programação e tecnologia.">
-  <meta name="twitter:url" content="https://math-cod3.github.io/portifolio.matheusaraujo.io/">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="img/link__img.jpg">
-  <meta name="twitter:creator" content="@matheusaraujo">
+  .version{ margin-bottom:30px; }
+  .version:last-child{ margin-bottom:0; }
+  .vhead{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:4px; }
+  .vtag{
+    font-size:13px; font-weight:700; color:var(--bg); background:var(--add);
+    padding:2px 9px; border-radius:5px; flex:none;
+  }
+  .version.past .vtag{ background:var(--faint); }
+  .vrole{ font-size:15.5px; font-weight:650; }
+  .vperiod{ font-size:12.5px; color:var(--faint); margin-left:auto; white-space:nowrap; }
+  .vorg{ font-size:13.5px; color:var(--muted); margin-bottom:12px; }
+  .diff{ list-style:none; margin:0; padding:0; border-left:2px solid var(--hair); }
+  .diff li{ position:relative; padding:4px 0 4px 18px; font-size:13.8px; color:#C6CDD4; }
+  .diff li::before{ content:"+"; position:absolute; left:0; color:var(--add); font-weight:700; font-family:'IBM Plex Mono',monospace; }
+  .diff li b{ color:var(--ink); font-weight:600; }
 
+  .skillgrid{ display:grid; gap:16px; }
+  .skillrow{ display:grid; grid-template-columns:150px 1fr; gap:14px; align-items:baseline; }
+  .skillrow .k{ font-size:12px; font-weight:700; color:var(--faint); text-transform:uppercase; letter-spacing:.06em; }
+  .chips{ display:flex; flex-wrap:wrap; gap:7px; }
+  .chip{ font-size:12.5px; color:#C6CDD4; background:var(--card); border:1px solid var(--hair); border-radius:6px; padding:4px 9px; }
 
+  .proj{ background:var(--card); border:1px solid var(--hair); border-radius:10px; padding:18px 20px; margin-bottom:14px; }
+  .proj:last-child{ margin-bottom:0; }
+  .proj .ph{ display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .proj h3{ font-size:15.5px; margin:0; font-weight:650; }
+  .proj .status{ font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; padding:2px 7px; border-radius:5px; }
+  .status-prod{ background:var(--add-soft); color:var(--add); }
+  .status-wip{ background:var(--ctx-soft); color:var(--ctx); }
+  .proj p{ font-size:13.8px; color:var(--muted); margin:0; }
+  .proj .stack{ margin-top:10px; }
 
-  <!-- CSS PURO -->
+  .edugrid{ display:grid; gap:18px; }
+  .edu-item .t{ font-size:14.5px; font-weight:650; }
+  .edu-item .s{ font-size:13px; color:var(--muted); }
 
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/cookies.css">
+  footer{ padding:36px 0 50px; text-align:center; }
+  footer .mono{ font-size:12px; color:var(--faint); }
+  footer .back-top{ font-size:12.5px; margin-top:10px; display:inline-block; }
 
-  <link rel="icon" href="img/logo-icon.png">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>&Rcy;ortifólio &#x000B7; Matheus Araujo&NewLine; &#x000B7; Página Inicial</title>
+  @media (max-width:560px){
+    .skillrow{ grid-template-columns:1fr; gap:6px; }
+    .vperiod{ margin-left:0; }
+  }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+</style>
 </head>
-
-<!-- <body style="background: linear-gradient(40deg, #8e2de2, #4a00e0); background-attachment: fixed; background-size: cover; "> -->
-
-<!-- <body style="background-image: url(img/fluid.svg); background-attachment: fixed; background-size: cover;"> -->
-
 <body>
 
-
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T67X783" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <header id="top">
-
-    <div class="header">
-
-
-      <a href="#" style="text-decoration: none;"><span class="logo">
-          Math-cod3
-          <img src="img/logo-icon.png" width="24" height="24" alt="logo" />
-        </span></a>
-
-      <input type="checkbox" id="hamburguer" style="display: none;">
-      <label for="hamburguer">
-        <div class="hamburguer" onclick="mudarClasse()">
-
-        </div>
-      </label>
-
-      <nav id="nav-menu">
-        <ul>
-          <li><a href="#about" class="link">Sobre mim</a></li>
-          <li><a href="#skills" class="link">Skills</a></li>
-          <li><a href="#port" class="link">Projetos</a></li>
-          <li><a href="#art" class="link">ArtWork</a></li>
-          <li><a href="#contato" class="link">Contato</a></li>
-
-          <li><a href="mailto:matheus.souza74work@gmail.com" data-bs-toggle="popover" title="E-mail"
-              data-bs-content="Página de contato"><i id="carta" class="far fa-envelope"
-                style="font-size: 24px; filter: invert(0);"></i></a></li>
-
-        </ul>
-      </nav>
-
-
-    </div>
-
-  </header>
-  <div id="scroll-progress"></div>
-
-  <!-- <div id="loader"></div> -->
-
-
-  <main style="margin-top: 3.5rem;">
-
-    <!-- SEÇÃO INICIAL -->
-    <section id="home">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 d-flex caixa" data-anime="left">
-            <div class="align-self-center">
-              <h2 class="display-5 fw-bold" style="color: #A3AEB7; font-weight: bold; font-size: 36px;">
-                Bem-vindo! 😄
-              </h2>
-              <h1 class="display-5 fw-bold" id="h1" style=" font-weight: bolder; font-size: 50px;">
-                Me chamo Matheus
-              </h1>
-              <p class="lead" data-anime="left" id="type">
-                Designer Gráfico, Desenvolvedor Front-end e com enorme paixão por desenvolvimento de software.
-              </p>
-
-              <div class="social-media">
-                <div class="face">
-                  <a href="https://www.instagram.com/matheussouza74_dev/">
-                    <i class="fa-brands fa-instagram"></i><span></span></a>
-                </div>
-
-                <div class="linked">
-                  <a href="https://www.linkedin.com/in/matheus-araujo-212851236/"><i
-                      class="fab fa-linkedin-in"></i><span></span></a></div>
-
-                <div class="git">
-                  <a href="https://github.com/Math-cod3"> <i class="fab fa-github"></i><span class="git"></span></a>
-                </div>
-              </div>
-
-
-              <div class="container-gear">
-                <i onclick="handleSwitchTheme()" id="theme-toggler" class="fa-solid fa-gear"></i>
-              </div>
-
-              <div class="switch-theme">
-
-                <span onclick="switchTheme('white')" class="switch-white"></span>
-                <span onclick="switchTheme('purple')" class="switch-purple"></span>
-                <span onclick="switchTheme('black')" class="switch-black"></span>
-                <span onclick="switchTheme('blue')" class="switch-blue"></span>
-
-
-              </div>
-
-
-              <a href="img/curriculummath.pdf" download>
-                <button class="btnn2">
-                  Baixar CV
-                </button>
-              </a>
-
-
-            </div>
-          </div>
-          <div class="col-md-6 caixa " style=" padding: 50px; width: 400px; min-width: 200px;" data-anime="right">
-            <!-- d-none -->
-            <!-- <img src="img/Programming-pana.svg"  alt="Sobre mim" class="img-fluid"  > -->
-            <div>
-
-              <lottie-player data-anime="right" src="https://assets5.lottiefiles.com/packages/lf20_bp5lntrf.json"
-                background="transparent" speed="1.5"
-                style="width: 350px; height: 350px; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)); " loop autoplay>
-              </lottie-player>
-
-
-              <!-- <img src="img/profile-pic (4).png" class="img-fluid" alt="profile picture"
-                style="border: 1px solid #000; width: 300px; filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)) contrast(1.3); border-radius: 50%;"> -->
-            </div>
-
-
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 d-flex caixa">
-            <div data-anime="right style="display: flex; align-items: center; justify-content: center;">
-              <h2 style="font-weight: bold; color: rgb(163, 174, 183);">Sobre mim</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div data-anime="top" class="col-md-6 d-flex caixa">
-            <div style="display: flex; align-items: center; justify-content: center;">
-              <img src="img/profile-pic (5).png" class="img-fluid" alt="profile picture"
-                style=" width: 18.75rem; filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)) contrast(1.3); border-radius: 50%;">
-            </div>
-          </div>
-          <div class="col-md-6 d-flex caixa">
-            <div  style="display: flex; align-items: center; justify-content: center;">
-              <p data-anime="left">Bem-vindo. Sou estudante de análise de desenvolvimento de sistemas pela Universidade do Estado do Rio
-                de Janeiro, Desenvolvedor Front-end, Designer Gráfico e apaixonado por programação e tecnologia.
-                Acredito que o trabalho de um programador não é apenas escrever código, mas principalmente encontrar
-                soluções inovadoras para resolver os problemas das pessoas.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-md-12 d-flex caixa">
-            <div style="display: flex; align-items: center; justify-content: center;">
-              <a data-anime="top" href="https://github.com/Math-cod3">
-                <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Math-cod3&show_icons=true&theme=discord_old_blurple&include_all_commits=true&count_private=true"/>
-                <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Math-cod3&layout=compact&langs_count=7&theme=discord_old_blurple"/></a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <section id="skills">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 align-self-center">
-            <div style="display: flex; align-items: center; justify-content: center;">
-              <h2 style="font-weight: bold;">Hard Skills</h2>
-            </div>
-
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 d-flex caixa">
-            <article>
-              <div class="main-content-skill">
-
-                <h2></h2><span><i style="font-size: 2rem" class="fa-brands fa-react"></i></span>
-
-                <p data-anime="top">
-                </p>
-
-              </div>
-            </article>
-          </div>
-          <div class="col-md-6 d-flex caixa">
-            <article>
-              <div data-anime="left" class="sub-content-skill">
-                <ul>
-
-                </ul>
-              </div>
-            </article>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SEÇÃO PORTIFÓLIO -->
-    <section id="port">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 d-flex caixa">
-            <div class="align-self-center">
-              <h2 data-anime="right" style=" font-weight: bold;">{Projetos}</h2>
-              <p data-anime="right">
-                Desenvolver aplicações com o intuito de sempre querer melhorar é o brilho que todo desenvolvedor deveria
-                ter. Clique no botão "projetos" para ver meus trabalhos em uma página separada.
-              </p>
-              <a href="projetos.html">
-                <button class="btnn2">Visualizar<span></span></button>
-              </a>
-
-              <!-- <div class="col-md-12 poster">
-                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_xsnsvpbs.json"
-                  background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
-              </div> -->
-
-
-            </div>
-          </div>
-
-
-          <div class="col-md-6" data-anime="left">
-
-            <div class="align-self-center">
-              <div class="row albuns">
-                <div class="col-md-6 poster">
-                  <img src="img/spotify.png" class="img-fluid">
-                  <a href="spotify/index.html"><span>
-                      <h5>Spotify</h5>
-                    </span></a>
-                </div>
-                <div class="col-md-6 poster">
-                  <img src="img/mosquitocapa.png" class="img-fluid">
-                  <a href="mosquito/index.html"><span>
-                      <h5>Mini Game &#x000B7; Mata Mosquito</h5>
-                    </span></a>
-                </div>
-              </div>
-              <div class="row albuns">
-                <div class="col-md-6 poster">
-                  <img src="img/quadromedalha.png" class="img-fluid">
-                  <a href="olimpic.html"><span>
-                      <h5>Quadro de medalhas</h5>
-                    </span></a>
-                </div>
-                <div class="col-md-6 poster">
-                  <img src="img/orcamento.png" class="img-fluid">
-                  <a href="app1/index.html"><span>
-                      <h5>Orçamento</h5>
-                    </span></a>
-                </div>
-              </div>
-
-            </div>
-
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-    </section>
-
-    <!-- SEÇÃO ARTWORK -->
-    <section id="art">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-6">
-            <center>
-              <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_2nbubmkc.json" mode="bounce"
-                background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
-            </center>
-
-          </div>
-
-
-          <div class="col-md-6 d-flex caixa" data-anime="left">
-            <div class="align-self-center">
-              <h2 data-anime="right" style=" font-weight: bold;">Ilustrações🌈</h2>
-              <p data-anime="right">
-                Conhecer os softwares de Designer Gráfico também faz parte da vida de quem deseja que as pessoas tenham
-                uma experiência visual agradável. Clique no botão "Visualizar" para ver meus trabalhos em uma página
-                separada.
-              </p>
-              <a href="artwork.html">
-                <button class="btnn2">Visualizar<span></span></button>
-                <!-- <button class="btn btn-primary">Visualizar</button> -->
-              </a>
-
-
-            </div>
-          </div>
-
-
-
-
-        </div>
-
-
-
-      </div>
-    </section>
-
-
-    <!-- SEÇÃO SOFT SKILLS -->
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 caixa">
-            <center>
-              <h2 style=" font-weight: bold; margin: 2em;">Soft Skills🧠</h2>
-              <p style="color: #18191A;">
-                Também é importante para um profissional desenvolver habilidades interpessoais que vão além da técnica.
-                Aqui estão algumas competências que me destaco.
-              </p>
-            </center>
-          </div>
-        </div>
-        <div class="row">
-
-          <div class="col-md-4 caixa" data-anime="left" style=" border-radius: 10px; overflow: hidden;">
-            <div class="card-softskill">
-
-              <center style="padding: 2rem;"><img src="img/comunicacao.png" class="img-fluid"
-                  alt="habilidades de desenvolvimento" width="64" height="64"> </center>
-
-              <center>
-                <h4 style="font-weight: bold;">Comunicação</h4>
-              </center>
-              <p style="padding: 0.5rem;">
-                &emsp;Manter uma boa e eficaz comunicação com pessoas, seja o cliente ou colega de trabalho é
-                indispensável não só no ambiente profissional, mas também para a vida.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="col-md-4 caixa" data-anime="top" style=" border-radius: 10px; overflow: hidden;">
-            <div class="card-softskill">
-              <center style="padding: 2rem;"><img src="img/ideia.png" class="img-fluid" width="64" height="64"
-                  alt="criativo"> </center>
-              <center>
-                <h4 style="font-weight: bold;">Criatividade</h4>
-              </center>
-              <p style="padding: 0.5rem;">
-                &emsp;O trabalho de um programador não se calca apenas em escrever código, mas principalmente em
-                encontrar soluções inovadoras para a resolução de problemas.
-              </p>
-            </div>
-          </div>
-
-
-          <div class="col-md-4 caixa" data-anime="right" style=" border-radius: 10px; overflow: hidden;">
-            <div class="card-softskill">
-              <center style="padding: 2rem;"><img src="img/adaptativo.png" width="64" height="64" class="img-fluid"
-                  alt="adaptativo"></center>
-
-              <center>
-                <h4 style="font-weight: bold;">Adaptatividade</h4>
-              </center>
-              <p style="padding: 0.5rem;">
-                &emsp;Para o profissional de TI a adaptatividade talvez seja mais importante do que em qualquer outra
-                área. Com as mudanças diárias no mercado de tecnologia, ele deve estar apto prontamente às mudanças.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SEÇÃO DE FORMULÁRIO -->
-    <section id="contato">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 d-flex caixa" data-anime="left">
-            <div class="align-self-center">
-              <h3 style=" font-weight: bolder;">"Vamos bater um papo? Envie uma mensagem ou deixe seu
-                e-mail."</h3>
-              <p style="color: #aaa;">
-                Contato: +55 21 97686-9618 <img src="img/whatsapp.png">
-              </p>
-              <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_8eivc9l1.json" background="transparent"
-                speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
-            </div>
-
-          </div>
-          <div class="col-md-6 d-flex caixa" data-anime="right">
-            <div class="align-self-center">
-
-              <a href="mailto:matheus.souza74work@gmail.com">
-                <button id="form-btn" class="btnn">Drop e-mail&emsp;&emsp; <span
-                    style="font-weight: bold ;font-size: 24px; color: #fff;">&rightarrow;</span></button>
-
-              </a>
-
-              <p style="display: block; margin: 10px;">
-                "Tentarei responder as mensagens assim que possível."
-              </p>
-
-
-
-
-            </div>
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-  <footer class="mt-4" style="background: #0D0C22; color: #fff; padding: 1rem;">
-    <div class="container" style="padding: 1rem!important;">
-      <div class="row">
-        <div class="col-md-8">
-          <p>
-
-            <a href="#"><i style="font-size: 24px; color: #0EC0C1;" class="fas fa-home"></i></a>
-
-          </p>
-          <div style="color: #fff;">Ícones feitos por <a href="https://www.flaticon.com/br/autores/fjstudio"
-              title="fjstudio">fjstudio</a> e <a href="https://www.flaticon.com/br/autores/smashicons"
-              title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/br/"
-              title="Flaticon">www.flaticon.com</a></div>
-          <p style="color: #fff;"> the icon "background" is provided by <a href="https://loading.io/">loading.io</a></p>
-
-
-        </div>
-        <div class="col-md-4">
-          <p style="color: #fff; font-style: italic;">
-            "Desenvolvido por Matheus Araujo de Souza&reg;"
-          </p>
-
-        </div>
-      </div>
-    </div>
-
-  </footer>
-  <div class="cookies-container">
-    <div class="cookies-content">
-      <p>Permito o uso de cookies para:</p>
-      <div class="cookies-pref">
-        <label><input type="checkbox" checked data-function="analytics">Análise de Uso</label>
-        <label><input type="checkbox" checked data-function="marketing">Marketing</label>
-      </div>
-      <button class="cookies-save">Salvar e Continuar</button>
+<div class="statusbar">
+  <div class="wrap">
+    <span class="dot-live"></span>
+    <span class="txt mono"><b>status:</b> disponível para oportunidades front-end · atualizado jul/2026</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow mono">whoami</div>
+    <h1>Matheus Araujo</h1>
+    <div class="role mono">Desenvolvedor Front-End<span class="sep">·</span>React &amp; Next.js</div>
+    <p class="lede">Base sólida em React, Next.js e TypeScript, com experiência real integrando front-end a APIs REST e microsserviços. Hoje desenvolvo um SaaS completo de ponta a ponta — front e back — aplicando testes automatizados, controle de acesso por papéis e conformidade com a LGPD.</p>
+    <div class="contacts mono">
+      <a href="mailto:matheus.souza74work@gmail.com">matheus.souza74work@gmail.com</a>
+      <a href="https://www.linkedin.com/in/matheus-araujo-212851236" target="_blank" rel="noopener">linkedin</a>
+      <a href="https://github.com/Math-cod3" target="_blank" rel="noopener">github</a>
+      <span>Rio de Janeiro, RJ · Remoto</span>
     </div>
   </div>
-  <script type="text/javascript" src="cookies/cookies.js"></script>
+</header>
 
-  <script>
-    let btn = document.getElementById('nav-menu')
+<section id="sobre" class="about">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag mono">01</span><h2>Sobre</h2></div>
+    <p>Voltei à programação com o pé no acelerador. Enquanto me candidato a posições front-end, mantenho um SaaS em produção — o Sinalaudos, uma plataforma de documentação clínica para psicólogos — cuidando de front-end, back-end, testes e segurança de dados sozinho.</p>
+    <p>Gosto de código legível antes de código esperto, e uso desenvolvimento assistido por IA (Claude Code, Spec-Driven Development) como parte real do meu fluxo de trabalho, não como atalho.</p>
+  </div>
+</section>
 
-    function mudarClasse() {
-      if (btn.classList == 'ativo') {
+<section id="experiencia">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag mono">02</span><h2>Log de experiência</h2></div>
 
-        btn.classList.remove('ativo')
-      } else {
-        btn.classList.add('ativo')
-      }
-    }
-  </script>
-  <script type="module" src="js/navbar-toggle.js"></script>
-  <script src="js/theme-toggle.js"></script>
+    <div class="version">
+      <div class="vhead">
+        <span class="vtag mono">v2.0</span>
+        <span class="vrole">Desenvolvedor Full-Stack (Independente)</span>
+        <span class="vperiod mono">mar/2024 — atual</span>
+      </div>
+      <div class="vorg">Sinalaudos (SaaS) · Rio de Janeiro</div>
+      <ul class="diff">
+        <li>SaaS completo com <b>front-end em React/Next.js</b> e back-end em <b>Node.js (NestJS)</b></li>
+        <li>Integração do front-end a <b>APIs REST e microsserviços</b>, com comunicação segura e escalável</li>
+        <li>Testes automatizados com <b>Jest</b>, cobrindo módulos críticos com controle de acesso por papéis (RBAC)</li>
+        <li>Versionamento com <b>Git</b> seguindo Conventional Commits, com revisão de código constante</li>
+        <li>Desenvolvimento assistido por IA (<b>Claude Code</b>, Spec-Driven Development)</li>
+        <li>Segurança e conformidade com a <b>LGPD</b> — autenticação JWT, RBAC, tratamento seguro de dados</li>
+      </ul>
+    </div>
 
-  <script type="module" src="js/scroll-progress.js"></script>
-  <script>
-    const text = document.querySelector('#h1');
-    const p = document.querySelector('p');
+    <div class="version past">
+      <div class="vhead">
+        <span class="vtag mono">v1.1</span>
+        <span class="vrole">Desenvolvedor Web</span>
+        <span class="vperiod mono">jul/2023 — fev/2024</span>
+      </div>
+      <div class="vorg">Drogarias Cumani</div>
+      <ul class="diff">
+        <li>E-commerce em <b>Shopify</b> com foco em UX e design responsivo (mobile-first)</li>
+        <li>Integração com sistemas externos via <b>APIs REST</b> (PDV Farmax) para estoque e baixa de pedidos</li>
+        <li>Automação de mensagens via <b>WhatsApp</b>, melhorando o atendimento</li>
+        <li>Ciclos ágeis de desenvolvimento e correção de bugs reportados</li>
+      </ul>
+    </div>
 
-    function digitar(elemento) {
-      const textoArray = elemento.innerHTML.split('');
-      elemento.innerHTML = '';
-      textoArray.forEach((letra, i) => {
-        setTimeout(() => elemento.innerHTML += letra, 50 * i);
-      });
-    }
-    digitar(p);
-  </script>
-  <script>
-    function share() {
-      if (navigator.share !== undefined) {
-        navigator.share({
-            title: 'O título da sua página',
-            text: 'Um texto de resumo',
-            url: 'https://seusite.com/sua_url',
-          })
-          .then(() => console.log('Successful share'))
-          .catch((error) => console.log('Error sharing', error));
-      }
-    }
-  </script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  <script type="text/javascript" src="js/scroll.js"></script>
-  <script src="js/skills.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
-  </script>
+    <div class="version past">
+      <div class="vhead">
+        <span class="vtag mono">v1.0</span>
+        <span class="vrole">Estágio em Desenvolvimento Front-End</span>
+        <span class="vperiod mono">set/2021 — abr/2022</span>
+      </div>
+      <div class="vorg">Grupo Soma</div>
+      <ul class="diff">
+        <li>Desenvolvimento de interfaces em projetos de grande escala</li>
+        <li>Colaboração com times de design usando <b>metodologias ágeis (Scrum)</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag mono">03</span><h2>Stack</h2></div>
+    <div class="skillgrid mono">
+      <div class="skillrow">
+        <div class="k">Front-end</div>
+        <div class="chips">
+          <span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">JavaScript</span>
+          <span class="chip">TypeScript</span><span class="chip">HTML5</span><span class="chip">CSS3</span>
+          <span class="chip">Responsive / Mobile First</span>
+        </div>
+      </div>
+      <div class="skillrow">
+        <div class="k">Back-end &amp; integração</div>
+        <div class="chips">
+          <span class="chip">Node.js</span><span class="chip">NestJS</span><span class="chip">APIs REST</span>
+          <span class="chip">PostgreSQL</span><span class="chip">Prisma</span>
+        </div>
+      </div>
+      <div class="skillrow">
+        <div class="k">Testes</div>
+        <div class="chips"><span class="chip">Jest</span></div>
+      </div>
+      <div class="skillrow">
+        <div class="k">Ferramentas &amp; práticas</div>
+        <div class="chips">
+          <span class="chip">Git · Conventional Commits</span><span class="chip">Docker</span>
+          <span class="chip">Code Review</span><span class="chip">Dev assistido por IA (SDD / Claude Code)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag mono">04</span><h2>Projetos</h2></div>
+
+    <div class="proj">
+      <div class="ph">
+        <h3>Sinalaudos</h3>
+        <span class="status status-prod mono">produção</span>
+      </div>
+      <p>SaaS de documentação clínica para psicólogos. Arquitetura full-stack própria, com autenticação JWT, controle de acesso por papéis e tratamento de dados sensíveis sob LGPD.</p>
+      <div class="stack chips">
+        <span class="chip">React/Next.js</span><span class="chip">NestJS</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span><span class="chip">Jest</span>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="ph">
+        <h3>Busca semântica para normas técnicas (RAG)</h3>
+        <span class="status status-wip mono">em construção</span>
+      </div>
+      <p>Sistema de recuperação aumentada por geração (RAG) sobre normas técnicas de segurança contra incêndio, com embeddings e busca vetorial via pgvector.</p>
+      <div class="stack chips">
+        <span class="chip">PostgreSQL + pgvector</span><span class="chip">Node.js</span><span class="chip">Embeddings</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formacao">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag mono">05</span><h2>Formação &amp; idiomas</h2></div>
+    <div class="edugrid">
+      <div class="edu-item">
+        <div class="t">Análise e Desenvolvimento de Sistemas</div>
+        <div class="s">Universidade do Estado do Rio de Janeiro (UERJ) · set/2020 — dez/2025</div>
+      </div>
+      <div class="edu-item">
+        <div class="t">Idiomas</div>
+        <div class="s">Inglês (avançado) · Espanhol (avançado)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="mono">// vamos conversar — <a href="mailto:matheus.souza74work@gmail.com">matheus.souza74work@gmail.com</a></div>
+    <a class="back-top mono" href="#sobre">↑ voltar ao topo</a>
+  </div>
+</footer>
+
 </body>
-
 </html>
