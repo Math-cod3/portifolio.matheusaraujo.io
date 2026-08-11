@@ -3,282 +3,339 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matheus Araujo · Desenvolvedor Front-End · React &amp; Next.js</title>
-<meta name="description" content="Matheus Araujo — Desenvolvedor Front-End (React & Next.js) com base full-stack. Currículo, experiência e contato.">
+<title>matheus.dev — Desenvolvedor Front-End · React & Next.js</title>
+<meta name="description" content="Matheus Araujo — Desenvolvedor Front-End (React & Next.js) com base full-stack.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0E1318;
-    --bg-alt:#141A21;
-    --card:#171E26;
-    --ink:#E9EDF1;
-    --muted:#8C98A4;
-    --faint:#5C6773;
-    --hair:#252E38;
-    --add:#4FB477;
-    --add-soft:#16241C;
-    --ctx:#C97B52;
-    --ctx-soft:#2A2019;
-    --link:#7FB8E0;
+    --bg:#1A1D23;
+    --sidebar:#15171B;
+    --panel:#21252B;
+    --panel-2:#262B33;
+    --ink:#D8DBE0;
+    --muted:#7D828C;
+    --faint:#565B64;
+    --hair:#2C313A;
+    --accent:#E8A54B;
+    --accent-soft:#3A2E1B;
+    --keyword:#C792EA;
+    --string:#7FDBB6;
+    --tag:#6FB6E8;
+    --danger:#E8846B;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
   body{
     margin:0; background:var(--bg); color:var(--ink);
-    font-family:'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
-    line-height:1.6; -webkit-font-smoothing:antialiased;
+    font-family:'JetBrains Mono', ui-monospace, Menlo, monospace;
+    font-size:14px; line-height:1.7; -webkit-font-smoothing:antialiased;
   }
-  .mono{ font-family:'IBM Plex Mono', ui-monospace, Menlo, monospace; }
-  a{ color:var(--link); text-decoration:none; }
+  a{ color:var(--tag); text-decoration:none; }
   a:hover{ text-decoration:underline; }
-  a:focus-visible, button:focus-visible{ outline:2px solid var(--add); outline-offset:2px; }
+  a:focus-visible, button:focus-visible, .file:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; }
+  ::selection{ background:var(--accent-soft); color:var(--accent); }
 
-  .wrap{ max-width:760px; margin:0 auto; padding:0 22px; }
+  .shell{ display:flex; min-height:100vh; flex-direction:column; }
+  .main{ display:flex; flex:1; min-height:0; }
 
-  .statusbar{
-    background:var(--bg-alt); border-bottom:1px solid var(--hair);
-    padding:9px 0; font-size:12px;
+  /* ---- titlebar ---- */
+  .titlebar{
+    background:var(--sidebar); border-bottom:1px solid var(--hair);
+    display:flex; align-items:center; gap:8px; padding:9px 14px; font-size:12px; color:var(--muted);
   }
-  .statusbar .wrap{ display:flex; align-items:center; gap:10px; }
-  .dot-live{ width:7px; height:7px; border-radius:50%; background:var(--add); box-shadow:0 0 0 3px var(--add-soft); flex:none; }
-  .statusbar .txt{ color:var(--muted); }
-  .statusbar .txt b{ color:var(--ink); font-weight:600; }
+  .dots{ display:flex; gap:6px; margin-right:6px; }
+  .dots span{ width:10px; height:10px; border-radius:50%; display:block; }
+  .dots span:nth-child(1){ background:#E8846B; } .dots span:nth-child(2){ background:#E8C34B; } .dots span:nth-child(3){ background:#7FDBB6; }
+  .titlebar .path{ color:var(--faint); }
 
-  header.hero{ padding:52px 0 40px; border-bottom:1px solid var(--hair); }
-  .eyebrow{ font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--add); font-weight:600; margin-bottom:14px; }
-  .eyebrow::before{ content:"$ "; color:var(--faint); }
-  h1{ font-size:clamp(28px,5vw,40px); font-weight:700; margin:0 0 6px; letter-spacing:-0.01em; }
-  .role{ font-size:16px; color:var(--muted); margin-bottom:22px; }
-  .role .sep{ color:var(--faint); margin:0 8px; }
-  .lede{ font-size:15.5px; color:#C6CDD4; max-width:58ch; margin-bottom:24px; }
-  .contacts{ display:flex; flex-wrap:wrap; gap:8px 18px; font-size:13.5px; }
-  .contacts a, .contacts span{ color:var(--muted); display:inline-flex; align-items:center; gap:6px; }
-  .contacts a:hover{ color:var(--add); }
-
-  section{ padding:42px 0; border-bottom:1px solid var(--hair); }
-  section:last-of-type{ border-bottom:none; }
-  .sec-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:22px; }
-  .sec-head .tag{ font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); }
-  .sec-head h2{ font-size:19px; font-weight:700; margin:0; }
-
-  .about p{ font-size:15px; color:#C6CDD4; max-width:62ch; margin:0 0 14px; }
-  .about p:last-child{ margin-bottom:0; }
-
-  .version{ margin-bottom:30px; }
-  .version:last-child{ margin-bottom:0; }
-  .vhead{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:4px; }
-  .vtag{
-    font-size:13px; font-weight:700; color:var(--bg); background:var(--add);
-    padding:2px 9px; border-radius:5px; flex:none;
+  /* ---- sidebar ---- */
+  .sidebar{
+    width:220px; flex:none; background:var(--sidebar); border-right:1px solid var(--hair);
+    padding:16px 0; overflow-y:auto;
   }
-  .version.past .vtag{ background:var(--faint); }
-  .vrole{ font-size:15.5px; font-weight:650; }
-  .vperiod{ font-size:12.5px; color:var(--faint); margin-left:auto; white-space:nowrap; }
-  .vorg{ font-size:13.5px; color:var(--muted); margin-bottom:12px; }
-  .diff{ list-style:none; margin:0; padding:0; border-left:2px solid var(--hair); }
-  .diff li{ position:relative; padding:4px 0 4px 18px; font-size:13.8px; color:#C6CDD4; }
-  .diff li::before{ content:"+"; position:absolute; left:0; color:var(--add); font-weight:700; font-family:'IBM Plex Mono',monospace; }
-  .diff li b{ color:var(--ink); font-weight:600; }
+  .sb-label{ font-size:10.5px; color:var(--faint); text-transform:uppercase; letter-spacing:.1em; padding:0 16px 8px; }
+  .file{
+    display:flex; align-items:center; gap:9px; width:100%; text-align:left; background:transparent; border:0;
+    color:var(--muted); font:inherit; font-size:13px; padding:7px 16px; cursor:pointer; transition:.12s;
+  }
+  .file:hover{ background:var(--panel); color:var(--ink); }
+  .file.active{ background:var(--panel); color:var(--ink); border-left:2px solid var(--accent); padding-left:14px; }
+  .file .ic{ width:14px; text-align:center; font-size:12px; flex:none; }
+  .file .ic.md{ color:var(--tag); } .file .ic.json{ color:var(--accent); } .file .ic.log{ color:var(--muted); }
+  .file .ic.sh{ color:var(--string); } .file .ic.dir{ color:var(--keyword); }
+  .sb-status{ padding:14px 16px 0; margin-top:10px; border-top:1px solid var(--hair); font-size:11.5px; color:var(--faint); }
+  .sb-status .dot{ width:6px; height:6px; border-radius:50%; background:var(--string); display:inline-block; margin-right:6px; box-shadow:0 0 0 3px var(--accent-soft); }
 
-  .skillgrid{ display:grid; gap:16px; }
-  .skillrow{ display:grid; grid-template-columns:150px 1fr; gap:14px; align-items:baseline; }
-  .skillrow .k{ font-size:12px; font-weight:700; color:var(--faint); text-transform:uppercase; letter-spacing:.06em; }
-  .chips{ display:flex; flex-wrap:wrap; gap:7px; }
-  .chip{ font-size:12.5px; color:#C6CDD4; background:var(--card); border:1px solid var(--hair); border-radius:6px; padding:4px 9px; }
+  /* ---- tabs + content ---- */
+  .editor{ flex:1; display:flex; flex-direction:column; min-width:0; }
+  .tabs{ display:flex; background:var(--sidebar); border-bottom:1px solid var(--hair); overflow-x:auto; }
+  .tab{
+    display:flex; align-items:center; gap:8px; padding:9px 16px; font-size:12.5px; color:var(--muted);
+    background:transparent; border:0; border-right:1px solid var(--hair); cursor:pointer; white-space:nowrap; transition:.12s;
+  }
+  .tab.active{ background:var(--panel); color:var(--ink); }
+  .tab .x{ color:var(--faint); font-size:11px; }
 
-  .proj{ background:var(--card); border:1px solid var(--hair); border-radius:10px; padding:18px 20px; margin-bottom:14px; }
-  .proj:last-child{ margin-bottom:0; }
+  .content{ flex:1; overflow-y:auto; background:var(--panel); padding:28px 34px 60px; }
+  .content-inner{ max-width:680px; }
+  .gutter-note{ color:var(--faint); font-size:12px; margin-bottom:22px; }
+  .gutter-note .c{ color:var(--muted); }
+
+  h1{ font-size:22px; font-weight:700; color:var(--ink); margin:0 0 4px; }
+  .kicker{ color:var(--keyword); font-size:12.5px; margin-bottom:20px; }
+  .kicker::before{ content:"// "; color:var(--faint); }
+  p.line{ margin:0 0 14px; color:#C2C6CD; max-width:64ch; }
+  .comment{ color:var(--faint); }
+  .str{ color:var(--string); }
+  .kw{ color:var(--keyword); }
+  .tagc{ color:var(--tag); }
+
+  /* about */
+  .contact-list{ list-style:none; margin:22px 0 0; padding:0; }
+  .contact-list li{ padding:3px 0; font-size:13px; }
+  .contact-list .k{ color:var(--faint); }
+
+  /* experience.log */
+  .entry{ margin-bottom:26px; padding-left:16px; border-left:2px solid var(--hair); }
+  .entry.current{ border-left-color:var(--accent); }
+  .entry .eh{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:2px; }
+  .entry .ver{ color:var(--accent); font-weight:600; font-size:13px; }
+  .entry.current .ver{ color:var(--accent); } .entry:not(.current) .ver{ color:var(--faint); }
+  .entry .role{ color:var(--ink); font-weight:600; font-size:14px; }
+  .entry .period{ margin-left:auto; color:var(--faint); font-size:11.5px; }
+  .entry .org{ color:var(--muted); font-size:12.5px; margin-bottom:10px; }
+  .entry ul{ margin:0; padding:0; list-style:none; }
+  .entry li{ padding:2px 0; font-size:13px; color:#C2C6CD; }
+  .entry li::before{ content:"+ "; color:var(--string); }
+
+  /* stack.json */
+  .jsonblock{ background:var(--panel-2); border:1px solid var(--hair); border-radius:6px; padding:18px 20px; font-size:13px; overflow-x:auto; }
+  .jsonblock .row{ margin:2px 0; }
+  .jk{ color:var(--tag); } .jp{ color:var(--muted); }
+  .jarr{ color:var(--string); }
+
+  /* projects */
+  .proj{ background:var(--panel-2); border:1px solid var(--hair); border-radius:6px; padding:16px 18px; margin-bottom:14px; }
   .proj .ph{ display:flex; align-items:center; gap:10px; margin-bottom:6px; }
-  .proj h3{ font-size:15.5px; margin:0; font-weight:650; }
-  .proj .status{ font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; padding:2px 7px; border-radius:5px; }
-  .status-prod{ background:var(--add-soft); color:var(--add); }
-  .status-wip{ background:var(--ctx-soft); color:var(--ctx); }
-  .proj p{ font-size:13.8px; color:var(--muted); margin:0; }
-  .proj .stack{ margin-top:10px; }
+  .proj h3{ font-size:14px; margin:0; color:var(--ink); }
+  .status{ font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:2px 7px; border-radius:4px; }
+  .status-ok{ background:var(--accent-soft); color:var(--string); }
+  .status-wip{ background:#3A2A22; color:var(--danger); }
+  .proj p{ margin:0; color:var(--muted); font-size:12.8px; }
+  .proj .stackline{ margin-top:8px; color:var(--faint); font-size:12px; }
+  .proj .stackline span{ color:var(--tag); }
 
-  .edugrid{ display:grid; gap:18px; }
-  .edu-item .t{ font-size:14.5px; font-weight:650; }
-  .edu-item .s{ font-size:13px; color:var(--muted); }
+  /* contact.sh */
+  .term{ background:#0F1114; border:1px solid var(--hair); border-radius:6px; padding:16px 18px; font-size:13px; }
+  .term .ln{ margin:4px 0; }
+  .prompt{ color:var(--string); }
+  .term a{ color:var(--tag); }
 
-  footer{ padding:36px 0 50px; text-align:center; }
-  footer .mono{ font-size:12px; color:var(--faint); }
-  footer .back-top{ font-size:12.5px; margin-top:10px; display:inline-block; }
-
-  @media (max-width:560px){
-    .skillrow{ grid-template-columns:1fr; gap:6px; }
-    .vperiod{ margin-left:0; }
+  /* status bar */
+  .statusbar{
+    background:var(--accent); color:#241A0A; font-size:11.5px; font-weight:600;
+    display:flex; align-items:center; gap:16px; padding:5px 14px; flex-wrap:wrap;
   }
-  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+  .statusbar span{ display:flex; align-items:center; gap:5px; }
+
+  @media (max-width:720px){
+    .sidebar{ width:150px; }
+    .content{ padding:22px 18px 50px; }
+    .entry .period{ margin-left:0; }
+  }
+  @media (max-width:560px){
+    .main{ flex-direction:column; }
+    .sidebar{ width:100%; border-right:0; border-bottom:1px solid var(--hair); padding:10px 0; }
+    .sb-status{ display:none; }
+  }
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
 </style>
 </head>
 <body>
 
-<div class="statusbar">
-  <div class="wrap">
-    <span class="dot-live"></span>
-    <span class="txt mono"><b>status:</b> disponível para oportunidades front-end · atualizado jul/2026</span>
+<div class="shell">
+  <div class="titlebar">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span class="path">matheus.dev — portfolio</span>
+  </div>
+
+  <div class="main">
+    <nav class="sidebar" id="sidebar">
+      <div class="sb-label">EXPLORER</div>
+      <button class="file active" data-file="about"><span class="ic md">▤</span> about.md</button>
+      <button class="file" data-file="experience"><span class="ic log">▤</span> experience.log</button>
+      <button class="file" data-file="stack"><span class="ic json">▤</span> stack.json</button>
+      <button class="file" data-file="projects"><span class="ic dir">▸</span> projects/</button>
+      <button class="file" data-file="contact"><span class="ic sh">▤</span> contact.sh</button>
+      <div class="sb-status"><span class="dot"></span>disponível para vagas front-end</div>
+    </nav>
+
+    <div class="editor">
+      <div class="tabs" id="tabs"></div>
+      <div class="content"><div class="content-inner" id="content"></div></div>
+    </div>
+  </div>
+
+  <div class="statusbar">
+    <span>⎇ main</span>
+    <span>UTF-8</span>
+    <span>Rio de Janeiro, RJ · Remoto</span>
+    <span id="sb-right" style="margin-left:auto;">about.md</span>
   </div>
 </div>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow mono">whoami</div>
-    <h1>Matheus Araujo</h1>
-    <div class="role mono">Desenvolvedor Front-End<span class="sep">·</span>React &amp; Next.js</div>
-    <p class="lede">Base sólida em React, Next.js e TypeScript, com experiência real integrando front-end a APIs REST e microsserviços. Hoje desenvolvo um SaaS completo de ponta a ponta — front e back — aplicando testes automatizados, controle de acesso por papéis e conformidade com a LGPD.</p>
-    <div class="contacts mono">
-      <a href="mailto:matheus.souza74work@gmail.com">matheus.souza74work@gmail.com</a>
-      <a href="https://www.linkedin.com/in/matheus-araujo-212851236" target="_blank" rel="noopener">linkedin</a>
-      <a href="https://github.com/Math-cod3" target="_blank" rel="noopener">github</a>
-      <span>Rio de Janeiro, RJ · Remoto</span>
-    </div>
-  </div>
-</header>
+<script>
+(function(){
+  const FILES = {
+    about: { icon:'md', tab:'about.md', render: renderAbout },
+    experience: { icon:'log', tab:'experience.log', render: renderExperience },
+    stack: { icon:'json', tab:'stack.json', render: renderStack },
+    projects: { icon:'dir', tab:'projects/', render: renderProjects },
+    contact: { icon:'sh', tab:'contact.sh', render: renderContact },
+  };
+  const ORDER = ['about','experience','stack','projects','contact'];
+  let openTabs = ['about'];
+  let active = 'about';
 
-<section id="sobre" class="about">
-  <div class="wrap">
-    <div class="sec-head"><span class="tag mono">01</span><h2>Sobre</h2></div>
-    <p>Voltei à programação com o pé no acelerador. Enquanto me candidato a posições front-end, mantenho um SaaS em produção — o Sinalaudos, uma plataforma de documentação clínica para psicólogos — cuidando de front-end, back-end, testes e segurança de dados sozinho.</p>
-    <p>Gosto de código legível antes de código esperto, e uso desenvolvimento assistido por IA (Claude Code, Spec-Driven Development) como parte real do meu fluxo de trabalho, não como atalho.</p>
-  </div>
-</section>
-
-<section id="experiencia">
-  <div class="wrap">
-    <div class="sec-head"><span class="tag mono">02</span><h2>Log de experiência</h2></div>
-
-    <div class="version">
-      <div class="vhead">
-        <span class="vtag mono">v2.0</span>
-        <span class="vrole">Desenvolvedor Full-Stack (Independente)</span>
-        <span class="vperiod mono">mar/2024 — atual</span>
-      </div>
-      <div class="vorg">Sinalaudos (SaaS) · Rio de Janeiro</div>
-      <ul class="diff">
-        <li>SaaS completo com <b>front-end em React/Next.js</b> e back-end em <b>Node.js (NestJS)</b></li>
-        <li>Integração do front-end a <b>APIs REST e microsserviços</b>, com comunicação segura e escalável</li>
-        <li>Testes automatizados com <b>Jest</b>, cobrindo módulos críticos com controle de acesso por papéis (RBAC)</li>
-        <li>Versionamento com <b>Git</b> seguindo Conventional Commits, com revisão de código constante</li>
-        <li>Desenvolvimento assistido por IA (<b>Claude Code</b>, Spec-Driven Development)</li>
-        <li>Segurança e conformidade com a <b>LGPD</b> — autenticação JWT, RBAC, tratamento seguro de dados</li>
+  function renderAbout(){
+    return `
+      <div class="gutter-note"><span class="c">01</span> — <span class="c">quem sou</span></div>
+      <div class="kicker">Desenvolvedor Front-End · React &amp; Next.js</div>
+      <h1>Matheus Araujo</h1>
+      <p class="line" style="margin-top:16px;"><span class="kw">const</span> foco = <span class="str">"voltar à programação com o pé no acelerador"</span>;</p>
+      <p class="line">Base sólida em React, Next.js e TypeScript, com experiência real integrando front-end a APIs REST e microsserviços. Hoje desenvolvo um SaaS completo de ponta a ponta — front e back — aplicando testes automatizados, controle de acesso por papéis e conformidade com a LGPD.</p>
+      <p class="line">Gosto de código legível antes de código esperto, e uso desenvolvimento assistido por IA (Claude Code, Spec-Driven Development) como parte real do meu fluxo de trabalho, não como atalho.</p>
+      <ul class="contact-list">
+        <li><span class="k">email</span> · <a href="mailto:matheus.souza74work@gmail.com">matheus.souza74work@gmail.com</a></li>
+        <li><span class="k">github</span> · <a href="https://github.com/Math-cod3" target="_blank" rel="noopener">github.com/Math-cod3</a></li>
+        <li><span class="k">linkedin</span> · <a href="https://www.linkedin.com/in/matheus-araujo-212851236" target="_blank" rel="noopener">in/matheus-araujo-212851236</a></li>
+        <li><span class="k">local</span> · Rio de Janeiro, RJ · Remoto</li>
       </ul>
-    </div>
+    `;
+  }
 
-    <div class="version past">
-      <div class="vhead">
-        <span class="vtag mono">v1.1</span>
-        <span class="vrole">Desenvolvedor Web</span>
-        <span class="vperiod mono">jul/2023 — fev/2024</span>
+  function renderExperience(){
+    return `
+      <div class="gutter-note"><span class="c">02</span> — <span class="c">log cronológico, mais recente primeiro</span></div>
+      <div class="entry current">
+        <div class="eh"><span class="ver">v2.0</span><span class="role">Desenvolvedor Full-Stack (Independente)</span><span class="period">mar/2024 — atual</span></div>
+        <div class="org">Sinalaudos (SaaS) · Rio de Janeiro</div>
+        <ul>
+          <li>SaaS completo com front-end em React/Next.js e back-end em Node.js (NestJS)</li>
+          <li>Integração do front-end a APIs REST e microsserviços, com comunicação segura e escalável</li>
+          <li>Testes automatizados com Jest, cobrindo módulos críticos com controle de acesso por papéis (RBAC)</li>
+          <li>Versionamento com Git seguindo Conventional Commits, com revisão de código constante</li>
+          <li>Desenvolvimento assistido por IA (Claude Code, Spec-Driven Development)</li>
+          <li>Segurança e conformidade com a LGPD — autenticação JWT, RBAC, tratamento seguro de dados</li>
+        </ul>
       </div>
-      <div class="vorg">Drogarias Cumani</div>
-      <ul class="diff">
-        <li>E-commerce em <b>Shopify</b> com foco em UX e design responsivo (mobile-first)</li>
-        <li>Integração com sistemas externos via <b>APIs REST</b> (PDV Farmax) para estoque e baixa de pedidos</li>
-        <li>Automação de mensagens via <b>WhatsApp</b>, melhorando o atendimento</li>
-        <li>Ciclos ágeis de desenvolvimento e correção de bugs reportados</li>
-      </ul>
-    </div>
+      <div class="entry">
+        <div class="eh"><span class="ver">v1.1</span><span class="role">Desenvolvedor Web</span><span class="period">jul/2023 — fev/2024</span></div>
+        <div class="org">Drogarias Cumani</div>
+        <ul>
+          <li>E-commerce em Shopify com foco em UX e design responsivo (mobile-first)</li>
+          <li>Integração com sistemas externos via APIs REST (PDV Farmax) para estoque e baixa de pedidos</li>
+          <li>Automação de mensagens via WhatsApp, melhorando o atendimento</li>
+          <li>Ciclos ágeis de desenvolvimento e correção de bugs reportados</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="eh"><span class="ver">v1.0</span><span class="role">Estágio em Desenvolvimento Front-End</span><span class="period">set/2021 — abr/2022</span></div>
+        <div class="org">Grupo Soma</div>
+        <ul>
+          <li>Desenvolvimento de interfaces em projetos de grande escala</li>
+          <li>Colaboração com times de design usando metodologias ágeis (Scrum)</li>
+        </ul>
+      </div>
+      <div class="entry" style="border-left-color:transparent;">
+        <div class="eh"><span class="ver" style="color:var(--faint)">edu</span><span class="role">Análise e Desenvolvimento de Sistemas</span><span class="period">set/2020 — dez/2025</span></div>
+        <div class="org">UERJ · Inglês (avançado) · Espanhol (avançado)</div>
+      </div>
+    `;
+  }
 
-    <div class="version past">
-      <div class="vhead">
-        <span class="vtag mono">v1.0</span>
-        <span class="vrole">Estágio em Desenvolvimento Front-End</span>
-        <span class="vperiod mono">set/2021 — abr/2022</span>
+  function renderStack(){
+    function arr(items){ return '[ ' + items.map(i=>`<span class="jarr">"${i}"</span>`).join(', ') + ' ]'; }
+    return `
+      <div class="gutter-note"><span class="c">03</span> — <span class="c">tecnologias em uso</span></div>
+      <div class="jsonblock">
+        <div class="row">{</div>
+        <div class="row">&nbsp;&nbsp;<span class="jk">"frontend"</span><span class="jp">:</span> ${arr(['React.js','Next.js','JavaScript','TypeScript','HTML5','CSS3','Responsive/Mobile First'])},</div>
+        <div class="row">&nbsp;&nbsp;<span class="jk">"backend"</span><span class="jp">:</span> ${arr(['Node.js','NestJS','APIs REST','PostgreSQL','Prisma'])},</div>
+        <div class="row">&nbsp;&nbsp;<span class="jk">"testes"</span><span class="jp">:</span> ${arr(['Jest'])},</div>
+        <div class="row">&nbsp;&nbsp;<span class="jk">"ferramentas"</span><span class="jp">:</span> ${arr(['Git · Conventional Commits','Docker','Code Review','Claude Code (SDD)'])}</div>
+        <div class="row">}</div>
       </div>
-      <div class="vorg">Grupo Soma</div>
-      <ul class="diff">
-        <li>Desenvolvimento de interfaces em projetos de grande escala</li>
-        <li>Colaboração com times de design usando <b>metodologias ágeis (Scrum)</b></li>
-      </ul>
-    </div>
-  </div>
-</section>
+    `;
+  }
 
-<section id="stack">
-  <div class="wrap">
-    <div class="sec-head"><span class="tag mono">03</span><h2>Stack</h2></div>
-    <div class="skillgrid mono">
-      <div class="skillrow">
-        <div class="k">Front-end</div>
-        <div class="chips">
-          <span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">JavaScript</span>
-          <span class="chip">TypeScript</span><span class="chip">HTML5</span><span class="chip">CSS3</span>
-          <span class="chip">Responsive / Mobile First</span>
-        </div>
+  function renderProjects(){
+    return `
+      <div class="gutter-note"><span class="c">04</span> — <span class="c">2 arquivos nesta pasta</span></div>
+      <div class="proj">
+        <div class="ph"><h3>sinalaudos.md</h3><span class="status status-ok">produção</span></div>
+        <p>SaaS de documentação clínica para psicólogos. Arquitetura full-stack própria, com autenticação JWT, controle de acesso por papéis e tratamento de dados sensíveis sob LGPD.</p>
+        <div class="stackline">stack: <span>React/Next.js</span> · <span>NestJS</span> · <span>PostgreSQL</span> · <span>Prisma</span> · <span>Jest</span></div>
       </div>
-      <div class="skillrow">
-        <div class="k">Back-end &amp; integração</div>
-        <div class="chips">
-          <span class="chip">Node.js</span><span class="chip">NestJS</span><span class="chip">APIs REST</span>
-          <span class="chip">PostgreSQL</span><span class="chip">Prisma</span>
-        </div>
+      <div class="proj">
+        <div class="ph"><h3>rag-normas-incendio.md</h3><span class="status status-wip">em construção</span></div>
+        <p>Sistema de recuperação aumentada por geração (RAG) sobre normas técnicas de segurança contra incêndio, com embeddings e busca vetorial via pgvector.</p>
+        <div class="stackline">stack: <span>PostgreSQL + pgvector</span> · <span>Node.js</span> · <span>Embeddings</span></div>
       </div>
-      <div class="skillrow">
-        <div class="k">Testes</div>
-        <div class="chips"><span class="chip">Jest</span></div>
-      </div>
-      <div class="skillrow">
-        <div class="k">Ferramentas &amp; práticas</div>
-        <div class="chips">
-          <span class="chip">Git · Conventional Commits</span><span class="chip">Docker</span>
-          <span class="chip">Code Review</span><span class="chip">Dev assistido por IA (SDD / Claude Code)</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    `;
+  }
 
-<section id="projetos">
-  <div class="wrap">
-    <div class="sec-head"><span class="tag mono">04</span><h2>Projetos</h2></div>
+  function renderContact(){
+    return `
+      <div class="gutter-note"><span class="c">05</span> — <span class="c">executável</span></div>
+      <div class="term">
+        <div class="ln"><span class="prompt">$</span> ./contact.sh --matheus</div>
+        <div class="ln comment">// vamos conversar</div>
+        <div class="ln">email: <a href="mailto:matheus.souza74work@gmail.com">matheus.souza74work@gmail.com</a></div>
+        <div class="ln">tel: (21) 97686-9618</div>
+        <div class="ln">status: <span style="color:var(--string)">disponível para posições front-end</span></div>
+        <div class="ln"><span class="prompt">$</span> <span class="comment">_</span></div>
+      </div>
+    `;
+  }
 
-    <div class="proj">
-      <div class="ph">
-        <h3>Sinalaudos</h3>
-        <span class="status status-prod mono">produção</span>
-      </div>
-      <p>SaaS de documentação clínica para psicólogos. Arquitetura full-stack própria, com autenticação JWT, controle de acesso por papéis e tratamento de dados sensíveis sob LGPD.</p>
-      <div class="stack chips">
-        <span class="chip">React/Next.js</span><span class="chip">NestJS</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span><span class="chip">Jest</span>
-      </div>
-    </div>
+  function openFile(id){
+    if(!openTabs.includes(id)) openTabs.push(id);
+    active = id;
+    render();
+  }
+  function closeTab(id, ev){
+    ev.stopPropagation();
+    openTabs = openTabs.filter(t=>t!==id);
+    if(!openTabs.length){ openTabs=['about']; active='about'; }
+    else if(active===id){ active = openTabs[openTabs.length-1]; }
+    render();
+  }
 
-    <div class="proj">
-      <div class="ph">
-        <h3>Busca semântica para normas técnicas (RAG)</h3>
-        <span class="status status-wip mono">em construção</span>
-      </div>
-      <p>Sistema de recuperação aumentada por geração (RAG) sobre normas técnicas de segurança contra incêndio, com embeddings e busca vetorial via pgvector.</p>
-      <div class="stack chips">
-        <span class="chip">PostgreSQL + pgvector</span><span class="chip">Node.js</span><span class="chip">Embeddings</span>
-      </div>
-    </div>
-  </div>
-</section>
+  function render(){
+    document.querySelectorAll('.file').forEach(f=>f.classList.toggle('active', f.dataset.file===active));
+    const tabsEl = document.getElementById('tabs');
+    tabsEl.innerHTML = openTabs.map(id=>{
+      const f = FILES[id];
+      return `<button class="tab${id===active?' active':''}" data-open="${id}">${f.tab}${openTabs.length>1?`<span class="x" data-close="${id}">×</span>`:''}</button>`;
+    }).join('');
+    document.getElementById('content').innerHTML = FILES[active].render();
+    document.getElementById('sb-right').textContent = FILES[active].tab;
 
-<section id="formacao">
-  <div class="wrap">
-    <div class="sec-head"><span class="tag mono">05</span><h2>Formação &amp; idiomas</h2></div>
-    <div class="edugrid">
-      <div class="edu-item">
-        <div class="t">Análise e Desenvolvimento de Sistemas</div>
-        <div class="s">Universidade do Estado do Rio de Janeiro (UERJ) · set/2020 — dez/2025</div>
-      </div>
-      <div class="edu-item">
-        <div class="t">Idiomas</div>
-        <div class="s">Inglês (avançado) · Espanhol (avançado)</div>
-      </div>
-    </div>
-  </div>
-</section>
+    document.querySelectorAll('[data-open]').forEach(b=>{
+      b.addEventListener('click', ()=> { active=b.dataset.open; render(); });
+    });
+    document.querySelectorAll('[data-close]').forEach(b=>{
+      b.addEventListener('click', (e)=> closeTab(b.dataset.close, e));
+    });
+  }
 
-<footer>
-  <div class="wrap">
-    <div class="mono">// vamos conversar — <a href="mailto:matheus.souza74work@gmail.com">matheus.souza74work@gmail.com</a></div>
-    <a class="back-top mono" href="#sobre">↑ voltar ao topo</a>
-  </div>
-</footer>
+  document.querySelectorAll('.file').forEach(f=>{
+    f.addEventListener('click', ()=> openFile(f.dataset.file));
+  });
 
+  render();
+})();
+</script>
 </body>
 </html>
