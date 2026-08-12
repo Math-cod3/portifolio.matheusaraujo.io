@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matheus Araujo — Desenvolvimento sob medida, com clareza e prazo</title>
+<meta name="description" content="Desenvolvimento de sites e sistemas sob medida. SaaS em produção, e-commerce entregue, processo transparente do orçamento à entrega.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F4EF;
+    --panel:#FFFFFF;
+    --ink:#1E2430;
+    --muted:#5B6472;
+    --faint:#8B93A0;
+    --hair:#E4E0D6;
+    --navy:#1B3A5C;
+    --navy-deep:#122942;
+    --navy-soft:#E7EDF3;
+    --gold:#B8894A;
+    --danger:#B5482F;
+    --danger-soft:#F5E7E1;
+    --ok:#2F6B4F;
+    --ok-soft:#E5EFE8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Inter', ui-sans-serif, system-ui, sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .serif{ font-family:'Fraunces', Georgia, serif; }
+  a{ color:var(--navy); }
+  a.btn{ text-decoration:none; }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--navy); outline-offset:2px; }
+
+  .wrap{ max-width:900px; margin:0 auto; padding:0 24px; }
+  section{ padding:64px 0; }
+
+  /* nav */
+  nav{ position:sticky; top:0; background:rgba(246,244,239,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--hair); z-index:10; }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; padding:14px 24px; }
+  .brand{ font-family:'Fraunces',serif; font-weight:600; font-size:17px; color:var(--ink); text-decoration:none; }
+  .navlinks{ display:flex; gap:22px; font-size:13.5px; }
+  .navlinks a{ color:var(--muted); text-decoration:none; font-weight:500; }
+  .navlinks a:hover{ color:var(--navy); }
+  .nav-cta{ background:var(--navy); color:#fff; padding:8px 16px; border-radius:7px; font-size:13px; font-weight:600; }
+  .nav-cta:hover{ background:var(--navy-deep); text-decoration:none; }
+  @media (max-width:640px){ .navlinks{ display:none; } }
+
+  /* hero */
+  .hero{ padding:76px 0 56px; }
+  .eyebrow{ font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:16px; }
+  h1{ font-family:'Fraunces',serif; font-weight:600; font-size:clamp(30px,5vw,46px); line-height:1.1; letter-spacing:-0.01em; margin:0 0 20px; max-width:16ch; }
+  h1 em{ font-style:normal; color:var(--navy); }
+  .hero-sub{ font-size:17px; color:var(--muted); max-width:52ch; margin-bottom:30px; }
+  .cta-row{ display:flex; gap:12px; flex-wrap:wrap; }
+  .btn-pri{ background:var(--navy); color:#fff; padding:13px 24px; border-radius:9px; font-weight:600; font-size:14.5px; display:inline-block; }
+  .btn-pri:hover{ background:var(--navy-deep); text-decoration:none; }
+  .btn-ghost{ background:transparent; color:var(--ink); border:1.5px solid var(--hair); padding:12px 22px; border-radius:9px; font-weight:600; font-size:14.5px; }
+  .btn-ghost:hover{ border-color:var(--navy); text-decoration:none; }
+
+  /* trust bar */
+  .trustbar{ border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); padding:26px 0; }
+  .trustgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .tstat{ text-align:center; }
+  .tstat .n{ font-family:'Fraunces',serif; font-size:26px; font-weight:600; color:var(--navy); }
+  .tstat .k{ font-size:12.5px; color:var(--muted); margin-top:2px; }
+  @media (max-width:600px){ .trustgrid{ grid-template-columns:1fr; gap:14px; } }
+
+  /* section headers */
+  .sec-eyebrow{ font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:10px; }
+  h2{ font-family:'Fraunces',serif; font-weight:600; font-size:28px; margin:0 0 16px; }
+  .sec-lede{ color:var(--muted); font-size:15px; max-width:56ch; margin-bottom:36px; }
+
+  /* process */
+  .steps{ display:grid; gap:0; border-top:1px solid var(--hair); }
+  .step{ display:grid; grid-template-columns:56px 1fr; gap:18px; padding:22px 0; border-bottom:1px solid var(--hair); }
+  .step .num{ font-family:'Fraunces',serif; font-size:22px; color:var(--faint); }
+  .step h3{ font-size:16px; margin:0 0 5px; font-weight:650; }
+  .step p{ margin:0; color:var(--muted); font-size:14px; max-width:52ch; }
+
+  /* cases */
+  .case{ background:var(--panel); border:1px solid var(--hair); border-radius:14px; padding:26px 28px; margin-bottom:18px; }
+  .case:last-child{ margin-bottom:0; }
+  .case .ch{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:8px; }
+  .case h3{ font-family:'Fraunces',serif; font-size:19px; margin:0; font-weight:600; }
+  .case .badge{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:3px 9px; border-radius:20px; background:var(--ok-soft); color:var(--ok); }
+  .case p{ color:var(--muted); font-size:14.5px; margin:0 0 12px; max-width:60ch; }
+  .case .out{ font-size:13.5px; color:var(--ink); background:var(--navy-soft); border-radius:8px; padding:10px 14px; display:inline-block; }
+  .case .out b{ color:var(--navy); }
+
+  /* price honesty */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px; }
+  .cbox{ border-radius:14px; padding:22px 24px; }
+  .cbox.bad{ background:var(--danger-soft); border:1px solid #E4C3B8; }
+  .cbox.good{ background:var(--ok-soft); border:1px solid #C7DDCC; }
+  .cbox .lab{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; }
+  .cbox.bad .lab{ color:var(--danger); } .cbox.good .lab{ color:var(--ok); }
+  .cbox ul{ margin:0; padding:0; list-style:none; }
+  .cbox li{ font-size:13.8px; padding:5px 0; color:var(--ink); }
+  .cbox.bad li::before{ content:"– "; color:var(--danger); font-weight:700; }
+  .cbox.good li::before{ content:"+ "; color:var(--ok); font-weight:700; }
+  @media (max-width:600px){ .compare{ grid-template-columns:1fr; } }
+  .price-note{ margin-top:20px; font-size:14px; color:var(--muted); background:var(--panel); border:1px solid var(--hair); border-radius:10px; padding:16px 18px; }
+
+  /* packages */
+  .pkgs{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .pkg{ background:var(--panel); border:1px solid var(--hair); border-radius:14px; padding:24px 22px; display:flex; flex-direction:column; }
+  .pkg.mid{ border-color:var(--navy); box-shadow:0 0 0 1px var(--navy); }
+  .pkg .tag{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--gold); margin-bottom:8px; }
+  .pkg h3{ font-family:'Fraunces',serif; font-size:19px; margin:0 0 8px; }
+  .pkg p{ font-size:13.5px; color:var(--muted); margin:0 0 16px; flex:1; }
+  .pkg ul{ margin:0 0 18px; padding:0; list-style:none; }
+  .pkg li{ font-size:13px; padding:4px 0; color:var(--ink); }
+  .pkg li::before{ content:"✓ "; color:var(--ok); }
+  .pkg .price{ font-size:13px; color:var(--faint); font-weight:600; }
+  @media (max-width:720px){ .pkgs{ grid-template-columns:1fr; } }
+
+  /* contact */
+  .contact-card{ background:var(--navy); color:#fff; border-radius:18px; padding:40px 36px; text-align:center; }
+  .contact-card h2{ color:#fff; }
+  .contact-card p{ color:#C9D6E3; max-width:48ch; margin:0 auto 26px; font-size:15px; }
+  .contact-links{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .contact-links a{ background:rgba(255,255,255,.1); color:#fff; padding:11px 20px; border-radius:9px; font-size:14px; font-weight:600; text-decoration:none; }
+  .contact-links a:hover{ background:rgba(255,255,255,.18); }
+
+  footer{ padding:30px 0 50px; text-align:center; font-size:12.5px; color:var(--faint); }
+
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#topo">Matheus Araujo</a>
+    <div class="navlinks">
+      <a href="#processo">Como trabalho</a>
+      <a href="#provas">Provas</a>
+      <a href="#pacotes">Pacotes</a>
+    </div>
+    <a class="nav-cta" href="#contato">Falar comigo</a>
+  </div>
+</nav>
+
+<header id="topo" class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Desenvolvimento sob medida</div>
+    <h1>Seu sistema <em>pronto, funcionando</em> e sem surpresa no meio do caminho.</h1>
+    <p class="hero-sub">Desenvolvo sites e sistemas para negócios que precisam de algo confiável — com escopo claro desde o orçamento, atualizações no processo e entrega no prazo combinado.</p>
+    <div class="cta-row">
+      <a class="btn-pri" href="#contato">Pedir um orçamento</a>
+      <a class="btn-ghost" href="#provas">Ver o que já entreguei</a>
+    </div>
+  </div>
+</header>
+
+<div class="trustbar">
+  <div class="wrap trustgrid">
+    <div class="tstat"><div class="n serif">SaaS</div><div class="k">em produção, uso real, desde 2024</div></div>
+    <div class="tstat"><div class="n serif">E-commerce</div><div class="k">entregue e integrado a sistema de estoque</div></div>
+    <div class="tstat"><div class="n serif">1 pessoa</div><div class="k">do orçamento à entrega — sem intermediário</div></div>
+  </div>
+</div>
+
+<section id="processo">
+  <div class="wrap">
+    <div class="sec-eyebrow">Como funciona</div>
+    <h2>Sem letra miúda</h2>
+    <p class="sec-lede">O processo é o mesmo em todo projeto, pra você saber exatamente o que esperar em cada etapa.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num serif">01</div>
+        <div><h3>Conversa e diagnóstico</h3><p>Entendo o que você precisa resolver de verdade — não só "quero um site", mas o problema por trás.</p></div>
+      </div>
+      <div class="step">
+        <div class="num serif">02</div>
+        <div><h3>Proposta com escopo fechado</h3><p>Você recebe o que está incluído, o prazo e o valor por escrito, antes de qualquer linha de código.</p></div>
+      </div>
+      <div class="step">
+        <div class="num serif">03</div>
+        <div><h3>Desenvolvimento com pontos de checagem</h3><p>Você acompanha o progresso em etapas combinadas — sem sumiço até o dia da entrega.</p></div>
+      </div>
+      <div class="step">
+        <div class="num serif">04</div>
+        <div><h3>Entrega e suporte</h3><p>Sistema no ar, com um período de ajustes incluso para o que precisar de retoque.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="provas">
+  <div class="wrap">
+    <div class="sec-eyebrow">Provas, não promessas</div>
+    <h2>O que já entreguei</h2>
+    <p class="sec-lede">Nada de mockup — os dois exemplos abaixo estão (ou estiveram) rodando de verdade.</p>
+
+    <div class="case">
+      <div class="ch"><h3>Sinalaudos</h3><span class="badge">Em produção</span></div>
+      <p>Plataforma de documentação clínica para psicólogos, construída e mantida por mim do zero — front-end, back-end e banco de dados.</p>
+      <div class="out">Resolve: <b>controle de acesso por papéis e conformidade com a LGPD</b> em um sistema que lida com dado sensível de paciente.</div>
+    </div>
+
+    <div class="case">
+      <div class="ch"><h3>Drogarias Cumani</h3><span class="badge">Entregue</span></div>
+      <p>Loja online em Shopify, com integração direta ao sistema de ponto de venda da farmácia para manter estoque e pedidos sincronizados sem trabalho manual.</p>
+      <div class="out">Resolve: <b>site e sistema de estoque conversando entre si</b>, sem depender de atualização manual.</div>
+    </div>
+  </div>
+</section>
+
+<section id="preco">
+  <div class="wrap">
+    <div class="sec-eyebrow">Sobre preço</div>
+    <h2>Por que eu não sou a opção mais barata</h2>
+    <p class="sec-lede">Prefiro te falar isso direto, em vez de você descobrir depois.</p>
+    <div class="compare">
+      <div class="cbox bad">
+        <div class="lab">Escolher só pelo mais barato</div>
+        <ul>
+          <li>Escopo reduzido pra caber no preço</li>
+          <li>Retrabalho não previsto vira custo extra depois</li>
+          <li>Sem processo claro de checagem no meio do caminho</li>
+        </ul>
+      </div>
+      <div class="cbox good">
+        <div class="lab">Escolher com clareza</div>
+        <ul>
+          <li>Escopo completo, definido antes de começar</li>
+          <li>Você acompanha o progresso, sem surpresa</li>
+          <li>Sistema pensado pra durar, não só pra sair rápido</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-note">Meu preço reflete o escopo real do que você precisa — não o menor número possível. Se o orçamento for apertado, prefiro te propor um recorte menor e honesto do projeto a cortar qualidade escondido.</div>
+  </div>
+</section>
+
+<section id="pacotes">
+  <div class="wrap">
+    <div class="sec-eyebrow">Pra começar</div>
+    <h2>Formatos de projeto</h2>
+    <p class="sec-lede">Um ponto de partida — todo projeto ganha uma proposta sob medida depois da conversa inicial.</p>
+    <div class="pkgs">
+      <div class="pkg">
+        <div class="tag">Enxuto</div>
+        <h3>Site institucional</h3>
+        <p>Presença online clara e profissional para o seu negócio.</p>
+        <ul><li>Design responsivo</li><li>Até 5 páginas</li><li>Formulário de contato</li></ul>
+        <div class="price">R$ 1.800 – R$ 4.500</div>
+      </div>
+      <div class="pkg mid">
+        <div class="tag">Mais pedido</div>
+        <h3>Sistema sob medida</h3>
+        <p>Aplicação com lógica própria, banco de dados e integrações.</p>
+        <ul><li>Front-end + back-end</li><li>Integração com sistemas existentes</li><li>Testes automatizados</li></ul>
+        <div class="price">R$ 5.000 – R$ 15.000<br><span style="font-weight:400;color:var(--faint);">varia com nº de perfis de usuário e integrações</span></div>
+      </div>
+      <div class="pkg">
+        <div class="tag">Avançado</div>
+        <h3>Automação com IA</h3>
+        <p>Fluxos automatizados usando IA aplicados a um processo real do seu negócio.</p>
+        <ul><li>Mapeamento do processo</li><li>Integração com suas ferramentas</li><li>Acompanhamento pós-entrega</li></ul>
+        <div class="price">R$ 4.000 – R$ 12.000<br><span style="font-weight:400;color:var(--faint);">por escopo — ou R$ 100–180/h em consultoria pontual</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <div class="contact-card">
+      <h2>Vamos conversar sobre o seu projeto</h2>
+      <p>Me conta o que você precisa resolver — eu respondo com um caminho claro, incluindo prazo e valor.</p>
+      <div class="contact-links">
+        <a href="mailto:matheus.souza74work@gmail.com">matheus.souza74work@gmail.com</a>
+        <a href="tel:+5521976869618">(21) 97686-9618</a>
+        <a href="https://www.linkedin.com/in/matheus-araujo-212851236" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>Matheus Araujo — Rio de Janeiro, RJ · Remoto</footer>
+
+</body>
+</html>
