@@ -92,13 +92,33 @@
   .tagc{ color:var(--tag); }
 
   /* about */
-  .avatar-wrap{ margin-bottom:18px; }
-  .avatar-img{ width:88px; height:88px; border-radius:12px; object-fit:cover; display:block; border:2px solid var(--hair); }
-  .avatar-fallback{
-    width:88px; height:88px; border-radius:12px; display:none; align-items:center; justify-content:center;
-    border:2px dashed var(--hair); background:var(--panel-2); color:var(--faint);
-    font-size:22px; font-weight:700; letter-spacing:.02em;
+  .content-inner.wide{ max-width:920px; }
+  .hero-about{ display:grid; grid-template-columns:1fr 320px; gap:44px; align-items:center; }
+  @media (max-width:760px){ .hero-about{ grid-template-columns:1fr; gap:28px; } }
+
+  .pill-avail{
+    display:inline-flex; align-items:center; gap:7px; font-size:11.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); border:1px solid var(--accent-soft); background:var(--accent-soft); border-radius:20px; padding:5px 12px; margin-bottom:18px;
   }
+  .pill-avail .dot{ width:6px; height:6px; border-radius:50%; background:var(--string); }
+  .hero-comment{ color:var(--faint); font-size:13px; margin-bottom:10px; }
+  .hero-comment b{ color:var(--keyword); font-weight:600; }
+  .hero-title{ font-size:clamp(32px,4.6vw,50px); font-weight:700; line-height:1.05; margin:0 0 18px; color:var(--ink); }
+  .hero-title .muted{ color:var(--faint); display:block; }
+
+  .photo-window{ border:1px solid var(--hair); border-radius:10px; overflow:hidden; background:var(--panel-2); box-shadow:0 24px 55px -24px rgba(0,0,0,.65); }
+  .pw-bar{ display:flex; align-items:center; gap:7px; padding:8px 12px; background:var(--sidebar); border-bottom:1px solid var(--hair); }
+  .pw-dot{ width:9px; height:9px; border-radius:50%; }
+  .pw-dot.r{ background:#E8846B; } .pw-dot.y{ background:#E8C34B; } .pw-dot.g{ background:#7FDBB6; }
+  .pw-file{ margin-left:6px; font-size:11px; color:var(--faint); }
+  .pw-body{ position:relative; aspect-ratio:4/5; background:var(--panel); }
+  .pw-img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .pw-fallback{ position:absolute; inset:0; display:none; align-items:center; justify-content:center; font-size:44px; font-weight:700; color:var(--faint); background:var(--panel-2); }
+  .pw-badge{ position:absolute; left:12px; right:12px; bottom:12px; display:flex; align-items:center; gap:10px; background:rgba(21,23,27,.85); backdrop-filter:blur(6px); border:1px solid var(--hair); border-radius:9px; padding:10px 12px; }
+  .pw-check{ width:22px; height:22px; border-radius:6px; background:var(--accent); color:#241A0A; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; flex:none; }
+  .pw-badge b{ display:block; font-size:12.5px; color:var(--ink); }
+  .pw-badge span{ font-size:11px; color:var(--muted); }
+
   .contact-list{ list-style:none; margin:22px 0 0; padding:0; }
   .contact-list li{ padding:3px 0; font-size:13px; }
   .contact-list .k{ color:var(--faint); }
@@ -210,21 +230,29 @@
   function renderAbout(){
     return `
       <div class="gutter-note"><span class="c">01</span> — <span class="c">quem sou</span></div>
-      <div class="avatar-wrap">
-        <img class="avatar-img" src="img/brazil-shirt.jpeg" alt="Foto de Matheus Araujo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="avatar-fallback">MA</div>
+      <div class="hero-about">
+        <div>
+          <div class="pill-avail"><span class="dot"></span> disponível para oportunidades</div>
+          <div class="hero-comment">// oi, meu nome é <b>Matheus Araujo</b></div>
+          <h1 class="hero-title">Desenvolvedor<span class="muted">Full-Stack</span></h1>
+          <p class="line">Base sólida em React, Next.js e TypeScript, com experiência real integrando front-end a APIs REST e microsserviços. Hoje desenvolvo um SaaS completo de ponta a ponta — front e back — aplicando testes automatizados, controle de acesso por papéis e conformidade com a LGPD.</p>
+          <p class="line">Gosto de código legível antes de código esperto, e uso desenvolvimento assistido por IA (Claude Code, Spec-Driven Development) como parte real do meu fluxo de trabalho, não como atalho.</p>
+          <ul class="contact-list">
+            <li><span class="k">email</span> · <a href="mailto:matheus.souza74work@gmail.com">matheus.souza74work@gmail.com</a></li>
+            <li><span class="k">github</span> · <a href="https://github.com/Math-cod3" target="_blank" rel="noopener">github.com/Math-cod3</a></li>
+            <li><span class="k">linkedin</span> · <a href="https://www.linkedin.com/in/matheus-araujo-212851236" target="_blank" rel="noopener">in/matheus-araujo-212851236</a></li>
+            <li><span class="k">local</span> · Rio de Janeiro, RJ · Remoto</li>
+          </ul>
+        </div>
+        <div class="photo-window">
+          <div class="pw-bar"><span class="pw-dot r"></span><span class="pw-dot y"></span><span class="pw-dot g"></span><span class="pw-file">foto.jpg</span></div>
+          <div class="pw-body">
+            <img class="pw-img" src="img/brazil-shirt.jpeg" alt="Foto de Matheus Araujo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="pw-fallback">MA</div>
+            <div class="pw-badge"><span class="pw-check">✓</span><div><b>Full-stack desde 2024</b><span>SaaS em produção · LGPD</span></div></div>
+          </div>
+        </div>
       </div>
-      <div class="kicker">Desenvolvedor Front-End · React &amp; Next.js</div>
-      <h1>Matheus Araujo</h1>
-      <p class="line" style="margin-top:16px;"><span class="kw">const</span> foco = <span class="str">"voltar à programação com o pé no acelerador"</span>;</p>
-      <p class="line">Base sólida em React, Next.js e TypeScript, com experiência real integrando front-end a APIs REST e microsserviços. Hoje desenvolvo um SaaS completo de ponta a ponta — front e back — aplicando testes automatizados, controle de acesso por papéis e conformidade com a LGPD.</p>
-      <p class="line">Gosto de código legível antes de código esperto, e uso desenvolvimento assistido por IA (Claude Code, Spec-Driven Development) como parte real do meu fluxo de trabalho, não como atalho.</p>
-      <ul class="contact-list">
-        <li><span class="k">email</span> · <a href="mailto:matheus.souza74work@gmail.com">matheus.souza74work@gmail.com</a></li>
-        <li><span class="k">github</span> · <a href="https://github.com/Math-cod3" target="_blank" rel="noopener">github.com/Math-cod3</a></li>
-        <li><span class="k">linkedin</span> · <a href="https://www.linkedin.com/in/matheus-araujo-212851236" target="_blank" rel="noopener">in/matheus-araujo-212851236</a></li>
-        <li><span class="k">local</span> · Rio de Janeiro, RJ · Remoto</li>
-      </ul>
     `;
   }
 
@@ -334,6 +362,7 @@
       return `<button class="tab${id===active?' active':''}" data-open="${id}">${f.tab}${openTabs.length>1?`<span class="x" data-close="${id}">×</span>`:''}</button>`;
     }).join('');
     document.getElementById('content').innerHTML = FILES[active].render();
+    document.getElementById('content').classList.toggle('wide', active==='about');
     document.getElementById('sb-right').textContent = FILES[active].tab;
 
     document.querySelectorAll('[data-open]').forEach(b=>{
